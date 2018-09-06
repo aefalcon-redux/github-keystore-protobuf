@@ -8,7 +8,7 @@ option go_package = "appkeypb";
 
 message App {
     uint64 id = 1;
-    map<string,AppKeyMeta> keys = 2;
+    map<string,AppKeyIndexEntry> keys = 2;
 }
 
 message AppIndexEntry {
@@ -43,6 +43,14 @@ message AppKey {
         bytes key_bytes = 3;
         string url_key_ref = 4;
         S3Ref s3_key_ref = 5;
+    }
+}
+
+message AppKeyIndexEntry {
+    AppKeyMeta meta = 1;
+    oneof ref {
+        S3Ref s3_ref = 2;
+	string url_ref = 3;
     }
 }
 
