@@ -1,0 +1,66 @@
+syntax = "proto3";
+package appkey;
+option go_package = "appkeypb";
+
+//*************************
+//* Data storage messages *
+//*************************
+
+message App {
+    uint64 id = 1;
+    map<string,AppKeyMeta> keys = 2;
+}
+
+message AppIndexEntry {
+    uint64 id = 1;
+    oneof ref {
+        S3Ref s3_ref = 2;
+	string url_ref = 3;
+    }
+}
+
+message AppIndex {
+    map<uint64,AppIndexEntry> app_refs = 1;
+}
+
+message S3Ref {
+    string bucket = 1;
+    string key = 2;
+    string region = 3;
+}
+
+message AppKeyMeta {
+    string fingerprint = 1;
+    uint64 app = 2;
+    bool disabled = 3;
+    string not_before = 4;
+    string noat_after = 5;
+}
+
+message AppKey {
+    AppKeyMeta meta = 1;
+    oneof key {
+        bytes key_bytes = 3;
+        string url_key_ref = 4;
+        S3Ref s3_key_ref = 5;
+    }
+}
+
+//*************************
+//* Communication messags *
+//*************************
+
+message AppKeySignRequest {
+    uint64 app = 1;
+    bytes protected_data = 2;
+    string algorithm = 3;
+    oneof key_selector {
+        string fingerprint = 4;
+    }
+}
+
+message AppKeySignedData {
+    bytes signature = 1;
+    string algorithm = 2;
+    string signing_fingerprint = 3;
+}
