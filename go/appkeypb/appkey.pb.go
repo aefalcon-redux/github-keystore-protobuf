@@ -18,6 +18,147 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
+type DocumentRef struct {
+	// Types that are valid to be assigned to Ref:
+	//	*DocumentRef_S3Ref
+	//	*DocumentRef_UrlRef
+	Ref                  isDocumentRef_Ref `protobuf_oneof:"ref"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *DocumentRef) Reset()         { *m = DocumentRef{} }
+func (m *DocumentRef) String() string { return proto.CompactTextString(m) }
+func (*DocumentRef) ProtoMessage()    {}
+func (*DocumentRef) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{0}
+}
+func (m *DocumentRef) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DocumentRef.Unmarshal(m, b)
+}
+func (m *DocumentRef) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DocumentRef.Marshal(b, m, deterministic)
+}
+func (dst *DocumentRef) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DocumentRef.Merge(dst, src)
+}
+func (m *DocumentRef) XXX_Size() int {
+	return xxx_messageInfo_DocumentRef.Size(m)
+}
+func (m *DocumentRef) XXX_DiscardUnknown() {
+	xxx_messageInfo_DocumentRef.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DocumentRef proto.InternalMessageInfo
+
+type isDocumentRef_Ref interface {
+	isDocumentRef_Ref()
+}
+
+type DocumentRef_S3Ref struct {
+	S3Ref *S3Ref `protobuf:"bytes,1,opt,name=s3_ref,json=s3Ref,proto3,oneof"`
+}
+
+type DocumentRef_UrlRef struct {
+	UrlRef string `protobuf:"bytes,2,opt,name=url_ref,json=urlRef,proto3,oneof"`
+}
+
+func (*DocumentRef_S3Ref) isDocumentRef_Ref() {}
+
+func (*DocumentRef_UrlRef) isDocumentRef_Ref() {}
+
+func (m *DocumentRef) GetRef() isDocumentRef_Ref {
+	if m != nil {
+		return m.Ref
+	}
+	return nil
+}
+
+func (m *DocumentRef) GetS3Ref() *S3Ref {
+	if x, ok := m.GetRef().(*DocumentRef_S3Ref); ok {
+		return x.S3Ref
+	}
+	return nil
+}
+
+func (m *DocumentRef) GetUrlRef() string {
+	if x, ok := m.GetRef().(*DocumentRef_UrlRef); ok {
+		return x.UrlRef
+	}
+	return ""
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*DocumentRef) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _DocumentRef_OneofMarshaler, _DocumentRef_OneofUnmarshaler, _DocumentRef_OneofSizer, []interface{}{
+		(*DocumentRef_S3Ref)(nil),
+		(*DocumentRef_UrlRef)(nil),
+	}
+}
+
+func _DocumentRef_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*DocumentRef)
+	// ref
+	switch x := m.Ref.(type) {
+	case *DocumentRef_S3Ref:
+		b.EncodeVarint(1<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.S3Ref); err != nil {
+			return err
+		}
+	case *DocumentRef_UrlRef:
+		b.EncodeVarint(2<<3 | proto.WireBytes)
+		b.EncodeStringBytes(x.UrlRef)
+	case nil:
+	default:
+		return fmt.Errorf("DocumentRef.Ref has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _DocumentRef_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*DocumentRef)
+	switch tag {
+	case 1: // ref.s3_ref
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(S3Ref)
+		err := b.DecodeMessage(msg)
+		m.Ref = &DocumentRef_S3Ref{msg}
+		return true, err
+	case 2: // ref.url_ref
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.Ref = &DocumentRef_UrlRef{x}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _DocumentRef_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*DocumentRef)
+	// ref
+	switch x := m.Ref.(type) {
+	case *DocumentRef_S3Ref:
+		s := proto.Size(x.S3Ref)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
+	case *DocumentRef_UrlRef:
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(len(x.UrlRef)))
+		n += len(x.UrlRef)
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
 type App struct {
 	Id                   uint64                       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Keys                 map[string]*AppKeyIndexEntry `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -30,7 +171,7 @@ func (m *App) Reset()         { *m = App{} }
 func (m *App) String() string { return proto.CompactTextString(m) }
 func (*App) ProtoMessage()    {}
 func (*App) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{0}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{1}
 }
 func (m *App) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_App.Unmarshal(m, b)
@@ -65,21 +206,18 @@ func (m *App) GetKeys() map[string]*AppKeyIndexEntry {
 }
 
 type AppIndexEntry struct {
-	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Types that are valid to be assigned to Ref:
-	//	*AppIndexEntry_S3Ref
-	//	*AppIndexEntry_UrlRef
-	Ref                  isAppIndexEntry_Ref `protobuf_oneof:"ref"`
-	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
-	XXX_unrecognized     []byte              `json:"-"`
-	XXX_sizecache        int32               `json:"-"`
+	Id                   uint64       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Ref                  *DocumentRef `protobuf:"bytes,2,opt,name=ref,proto3" json:"ref,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 
 func (m *AppIndexEntry) Reset()         { *m = AppIndexEntry{} }
 func (m *AppIndexEntry) String() string { return proto.CompactTextString(m) }
 func (*AppIndexEntry) ProtoMessage()    {}
 func (*AppIndexEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{1}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{2}
 }
 func (m *AppIndexEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppIndexEntry.Unmarshal(m, b)
@@ -106,111 +244,11 @@ func (m *AppIndexEntry) GetId() uint64 {
 	return 0
 }
 
-type isAppIndexEntry_Ref interface {
-	isAppIndexEntry_Ref()
-}
-
-type AppIndexEntry_S3Ref struct {
-	S3Ref *S3Ref `protobuf:"bytes,2,opt,name=s3_ref,json=s3Ref,proto3,oneof"`
-}
-
-type AppIndexEntry_UrlRef struct {
-	UrlRef string `protobuf:"bytes,3,opt,name=url_ref,json=urlRef,proto3,oneof"`
-}
-
-func (*AppIndexEntry_S3Ref) isAppIndexEntry_Ref() {}
-
-func (*AppIndexEntry_UrlRef) isAppIndexEntry_Ref() {}
-
-func (m *AppIndexEntry) GetRef() isAppIndexEntry_Ref {
+func (m *AppIndexEntry) GetRef() *DocumentRef {
 	if m != nil {
 		return m.Ref
 	}
 	return nil
-}
-
-func (m *AppIndexEntry) GetS3Ref() *S3Ref {
-	if x, ok := m.GetRef().(*AppIndexEntry_S3Ref); ok {
-		return x.S3Ref
-	}
-	return nil
-}
-
-func (m *AppIndexEntry) GetUrlRef() string {
-	if x, ok := m.GetRef().(*AppIndexEntry_UrlRef); ok {
-		return x.UrlRef
-	}
-	return ""
-}
-
-// XXX_OneofFuncs is for the internal use of the proto package.
-func (*AppIndexEntry) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _AppIndexEntry_OneofMarshaler, _AppIndexEntry_OneofUnmarshaler, _AppIndexEntry_OneofSizer, []interface{}{
-		(*AppIndexEntry_S3Ref)(nil),
-		(*AppIndexEntry_UrlRef)(nil),
-	}
-}
-
-func _AppIndexEntry_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*AppIndexEntry)
-	// ref
-	switch x := m.Ref.(type) {
-	case *AppIndexEntry_S3Ref:
-		b.EncodeVarint(2<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.S3Ref); err != nil {
-			return err
-		}
-	case *AppIndexEntry_UrlRef:
-		b.EncodeVarint(3<<3 | proto.WireBytes)
-		b.EncodeStringBytes(x.UrlRef)
-	case nil:
-	default:
-		return fmt.Errorf("AppIndexEntry.Ref has unexpected type %T", x)
-	}
-	return nil
-}
-
-func _AppIndexEntry_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*AppIndexEntry)
-	switch tag {
-	case 2: // ref.s3_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(S3Ref)
-		err := b.DecodeMessage(msg)
-		m.Ref = &AppIndexEntry_S3Ref{msg}
-		return true, err
-	case 3: // ref.url_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		x, err := b.DecodeStringBytes()
-		m.Ref = &AppIndexEntry_UrlRef{x}
-		return true, err
-	default:
-		return false, nil
-	}
-}
-
-func _AppIndexEntry_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*AppIndexEntry)
-	// ref
-	switch x := m.Ref.(type) {
-	case *AppIndexEntry_S3Ref:
-		s := proto.Size(x.S3Ref)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *AppIndexEntry_UrlRef:
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(len(x.UrlRef)))
-		n += len(x.UrlRef)
-	case nil:
-	default:
-		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
-	}
-	return n
 }
 
 type AppIndex struct {
@@ -224,7 +262,7 @@ func (m *AppIndex) Reset()         { *m = AppIndex{} }
 func (m *AppIndex) String() string { return proto.CompactTextString(m) }
 func (*AppIndex) ProtoMessage()    {}
 func (*AppIndex) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{2}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{3}
 }
 func (m *AppIndex) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppIndex.Unmarshal(m, b)
@@ -264,7 +302,7 @@ func (m *S3Ref) Reset()         { *m = S3Ref{} }
 func (m *S3Ref) String() string { return proto.CompactTextString(m) }
 func (*S3Ref) ProtoMessage()    {}
 func (*S3Ref) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{3}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{4}
 }
 func (m *S3Ref) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_S3Ref.Unmarshal(m, b)
@@ -320,7 +358,7 @@ func (m *AppKeyMeta) Reset()         { *m = AppKeyMeta{} }
 func (m *AppKeyMeta) String() string { return proto.CompactTextString(m) }
 func (*AppKeyMeta) ProtoMessage()    {}
 func (*AppKeyMeta) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{4}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{5}
 }
 func (m *AppKeyMeta) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeyMeta.Unmarshal(m, b)
@@ -378,9 +416,8 @@ func (m *AppKeyMeta) GetNoatAfter() string {
 type AppKey struct {
 	Meta *AppKeyMeta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
 	// Types that are valid to be assigned to Key:
+	//	*AppKey_Ref
 	//	*AppKey_KeyBytes
-	//	*AppKey_UrlKeyRef
-	//	*AppKey_S3KeyRef
 	Key                  isAppKey_Key `protobuf_oneof:"key"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
@@ -391,7 +428,7 @@ func (m *AppKey) Reset()         { *m = AppKey{} }
 func (m *AppKey) String() string { return proto.CompactTextString(m) }
 func (*AppKey) ProtoMessage()    {}
 func (*AppKey) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{5}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{6}
 }
 func (m *AppKey) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKey.Unmarshal(m, b)
@@ -422,27 +459,28 @@ type isAppKey_Key interface {
 	isAppKey_Key()
 }
 
+type AppKey_Ref struct {
+	Ref *DocumentRef `protobuf:"bytes,2,opt,name=ref,proto3,oneof"`
+}
+
 type AppKey_KeyBytes struct {
 	KeyBytes []byte `protobuf:"bytes,3,opt,name=key_bytes,json=keyBytes,proto3,oneof"`
 }
 
-type AppKey_UrlKeyRef struct {
-	UrlKeyRef string `protobuf:"bytes,4,opt,name=url_key_ref,json=urlKeyRef,proto3,oneof"`
-}
-
-type AppKey_S3KeyRef struct {
-	S3KeyRef *S3Ref `protobuf:"bytes,5,opt,name=s3_key_ref,json=s3KeyRef,proto3,oneof"`
-}
+func (*AppKey_Ref) isAppKey_Key() {}
 
 func (*AppKey_KeyBytes) isAppKey_Key() {}
-
-func (*AppKey_UrlKeyRef) isAppKey_Key() {}
-
-func (*AppKey_S3KeyRef) isAppKey_Key() {}
 
 func (m *AppKey) GetKey() isAppKey_Key {
 	if m != nil {
 		return m.Key
+	}
+	return nil
+}
+
+func (m *AppKey) GetRef() *DocumentRef {
+	if x, ok := m.GetKey().(*AppKey_Ref); ok {
+		return x.Ref
 	}
 	return nil
 }
@@ -454,26 +492,11 @@ func (m *AppKey) GetKeyBytes() []byte {
 	return nil
 }
 
-func (m *AppKey) GetUrlKeyRef() string {
-	if x, ok := m.GetKey().(*AppKey_UrlKeyRef); ok {
-		return x.UrlKeyRef
-	}
-	return ""
-}
-
-func (m *AppKey) GetS3KeyRef() *S3Ref {
-	if x, ok := m.GetKey().(*AppKey_S3KeyRef); ok {
-		return x.S3KeyRef
-	}
-	return nil
-}
-
 // XXX_OneofFuncs is for the internal use of the proto package.
 func (*AppKey) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
 	return _AppKey_OneofMarshaler, _AppKey_OneofUnmarshaler, _AppKey_OneofSizer, []interface{}{
+		(*AppKey_Ref)(nil),
 		(*AppKey_KeyBytes)(nil),
-		(*AppKey_UrlKeyRef)(nil),
-		(*AppKey_S3KeyRef)(nil),
 	}
 }
 
@@ -481,17 +504,14 @@ func _AppKey_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 	m := msg.(*AppKey)
 	// key
 	switch x := m.Key.(type) {
+	case *AppKey_Ref:
+		b.EncodeVarint(2<<3 | proto.WireBytes)
+		if err := b.EncodeMessage(x.Ref); err != nil {
+			return err
+		}
 	case *AppKey_KeyBytes:
 		b.EncodeVarint(3<<3 | proto.WireBytes)
 		b.EncodeRawBytes(x.KeyBytes)
-	case *AppKey_UrlKeyRef:
-		b.EncodeVarint(4<<3 | proto.WireBytes)
-		b.EncodeStringBytes(x.UrlKeyRef)
-	case *AppKey_S3KeyRef:
-		b.EncodeVarint(5<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.S3KeyRef); err != nil {
-			return err
-		}
 	case nil:
 	default:
 		return fmt.Errorf("AppKey.Key has unexpected type %T", x)
@@ -502,27 +522,20 @@ func _AppKey_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
 func _AppKey_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
 	m := msg.(*AppKey)
 	switch tag {
+	case 2: // key.ref
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		msg := new(DocumentRef)
+		err := b.DecodeMessage(msg)
+		m.Key = &AppKey_Ref{msg}
+		return true, err
 	case 3: // key.key_bytes
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
 		x, err := b.DecodeRawBytes(true)
 		m.Key = &AppKey_KeyBytes{x}
-		return true, err
-	case 4: // key.url_key_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		x, err := b.DecodeStringBytes()
-		m.Key = &AppKey_UrlKeyRef{x}
-		return true, err
-	case 5: // key.s3_key_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(S3Ref)
-		err := b.DecodeMessage(msg)
-		m.Key = &AppKey_S3KeyRef{msg}
 		return true, err
 	default:
 		return false, nil
@@ -533,19 +546,15 @@ func _AppKey_OneofSizer(msg proto.Message) (n int) {
 	m := msg.(*AppKey)
 	// key
 	switch x := m.Key.(type) {
+	case *AppKey_Ref:
+		s := proto.Size(x.Ref)
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(s))
+		n += s
 	case *AppKey_KeyBytes:
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(len(x.KeyBytes)))
 		n += len(x.KeyBytes)
-	case *AppKey_UrlKeyRef:
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(len(x.UrlKeyRef)))
-		n += len(x.UrlKeyRef)
-	case *AppKey_S3KeyRef:
-		s := proto.Size(x.S3KeyRef)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
 	case nil:
 	default:
 		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
@@ -554,21 +563,18 @@ func _AppKey_OneofSizer(msg proto.Message) (n int) {
 }
 
 type AppKeyIndexEntry struct {
-	Meta *AppKeyMeta `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
-	// Types that are valid to be assigned to Ref:
-	//	*AppKeyIndexEntry_S3Ref
-	//	*AppKeyIndexEntry_UrlRef
-	Ref                  isAppKeyIndexEntry_Ref `protobuf_oneof:"ref"`
-	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
-	XXX_unrecognized     []byte                 `json:"-"`
-	XXX_sizecache        int32                  `json:"-"`
+	Meta                 *AppKeyMeta  `protobuf:"bytes,1,opt,name=meta,proto3" json:"meta,omitempty"`
+	Ref                  *DocumentRef `protobuf:"bytes,2,opt,name=ref,proto3" json:"ref,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 
 func (m *AppKeyIndexEntry) Reset()         { *m = AppKeyIndexEntry{} }
 func (m *AppKeyIndexEntry) String() string { return proto.CompactTextString(m) }
 func (*AppKeyIndexEntry) ProtoMessage()    {}
 func (*AppKeyIndexEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{6}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{7}
 }
 func (m *AppKeyIndexEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeyIndexEntry.Unmarshal(m, b)
@@ -595,111 +601,11 @@ func (m *AppKeyIndexEntry) GetMeta() *AppKeyMeta {
 	return nil
 }
 
-type isAppKeyIndexEntry_Ref interface {
-	isAppKeyIndexEntry_Ref()
-}
-
-type AppKeyIndexEntry_S3Ref struct {
-	S3Ref *S3Ref `protobuf:"bytes,2,opt,name=s3_ref,json=s3Ref,proto3,oneof"`
-}
-
-type AppKeyIndexEntry_UrlRef struct {
-	UrlRef string `protobuf:"bytes,3,opt,name=url_ref,json=urlRef,proto3,oneof"`
-}
-
-func (*AppKeyIndexEntry_S3Ref) isAppKeyIndexEntry_Ref() {}
-
-func (*AppKeyIndexEntry_UrlRef) isAppKeyIndexEntry_Ref() {}
-
-func (m *AppKeyIndexEntry) GetRef() isAppKeyIndexEntry_Ref {
+func (m *AppKeyIndexEntry) GetRef() *DocumentRef {
 	if m != nil {
 		return m.Ref
 	}
 	return nil
-}
-
-func (m *AppKeyIndexEntry) GetS3Ref() *S3Ref {
-	if x, ok := m.GetRef().(*AppKeyIndexEntry_S3Ref); ok {
-		return x.S3Ref
-	}
-	return nil
-}
-
-func (m *AppKeyIndexEntry) GetUrlRef() string {
-	if x, ok := m.GetRef().(*AppKeyIndexEntry_UrlRef); ok {
-		return x.UrlRef
-	}
-	return ""
-}
-
-// XXX_OneofFuncs is for the internal use of the proto package.
-func (*AppKeyIndexEntry) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _AppKeyIndexEntry_OneofMarshaler, _AppKeyIndexEntry_OneofUnmarshaler, _AppKeyIndexEntry_OneofSizer, []interface{}{
-		(*AppKeyIndexEntry_S3Ref)(nil),
-		(*AppKeyIndexEntry_UrlRef)(nil),
-	}
-}
-
-func _AppKeyIndexEntry_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*AppKeyIndexEntry)
-	// ref
-	switch x := m.Ref.(type) {
-	case *AppKeyIndexEntry_S3Ref:
-		b.EncodeVarint(2<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.S3Ref); err != nil {
-			return err
-		}
-	case *AppKeyIndexEntry_UrlRef:
-		b.EncodeVarint(3<<3 | proto.WireBytes)
-		b.EncodeStringBytes(x.UrlRef)
-	case nil:
-	default:
-		return fmt.Errorf("AppKeyIndexEntry.Ref has unexpected type %T", x)
-	}
-	return nil
-}
-
-func _AppKeyIndexEntry_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*AppKeyIndexEntry)
-	switch tag {
-	case 2: // ref.s3_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(S3Ref)
-		err := b.DecodeMessage(msg)
-		m.Ref = &AppKeyIndexEntry_S3Ref{msg}
-		return true, err
-	case 3: // ref.url_ref
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		x, err := b.DecodeStringBytes()
-		m.Ref = &AppKeyIndexEntry_UrlRef{x}
-		return true, err
-	default:
-		return false, nil
-	}
-}
-
-func _AppKeyIndexEntry_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*AppKeyIndexEntry)
-	// ref
-	switch x := m.Ref.(type) {
-	case *AppKeyIndexEntry_S3Ref:
-		s := proto.Size(x.S3Ref)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *AppKeyIndexEntry_UrlRef:
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(len(x.UrlRef)))
-		n += len(x.UrlRef)
-	case nil:
-	default:
-		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
-	}
-	return n
 }
 
 type AppKeySignRequest struct {
@@ -718,7 +624,7 @@ func (m *AppKeySignRequest) Reset()         { *m = AppKeySignRequest{} }
 func (m *AppKeySignRequest) String() string { return proto.CompactTextString(m) }
 func (*AppKeySignRequest) ProtoMessage()    {}
 func (*AppKeySignRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{7}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{8}
 }
 func (m *AppKeySignRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeySignRequest.Unmarshal(m, b)
@@ -847,7 +753,7 @@ func (m *AppKeySignedData) Reset()         { *m = AppKeySignedData{} }
 func (m *AppKeySignedData) String() string { return proto.CompactTextString(m) }
 func (*AppKeySignedData) ProtoMessage()    {}
 func (*AppKeySignedData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_c13584ae19458a6e, []int{8}
+	return fileDescriptor_appkey_522bbaea3781b8f6, []int{9}
 }
 func (m *AppKeySignedData) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeySignedData.Unmarshal(m, b)
@@ -889,6 +795,7 @@ func (m *AppKeySignedData) GetSigningFingerprint() string {
 }
 
 func init() {
+	proto.RegisterType((*DocumentRef)(nil), "appkey.DocumentRef")
 	proto.RegisterType((*App)(nil), "appkey.App")
 	proto.RegisterMapType((map[string]*AppKeyIndexEntry)(nil), "appkey.App.KeysEntry")
 	proto.RegisterType((*AppIndexEntry)(nil), "appkey.AppIndexEntry")
@@ -902,47 +809,47 @@ func init() {
 	proto.RegisterType((*AppKeySignedData)(nil), "appkey.AppKeySignedData")
 }
 
-func init() { proto.RegisterFile("appkey.proto", fileDescriptor_appkey_c13584ae19458a6e) }
+func init() { proto.RegisterFile("appkey.proto", fileDescriptor_appkey_522bbaea3781b8f6) }
 
-var fileDescriptor_appkey_c13584ae19458a6e = []byte{
-	// 614 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x54, 0x31, 0x6f, 0xd3, 0x40,
-	0x14, 0xae, 0x1d, 0xc7, 0x75, 0x5e, 0xd2, 0xaa, 0x1c, 0x6a, 0x65, 0x2a, 0x2a, 0x45, 0x96, 0xa8,
-	0x8a, 0x10, 0x41, 0x6a, 0x96, 0x8a, 0x2d, 0x11, 0xa0, 0x56, 0x15, 0x43, 0xaf, 0x1b, 0x4b, 0x74,
-	0xa9, 0x9f, 0x83, 0x15, 0xd7, 0x3e, 0xee, 0xce, 0x08, 0x4f, 0x2c, 0xfc, 0x03, 0x06, 0x24, 0x06,
-	0x56, 0xfe, 0x26, 0xba, 0x3b, 0x3b, 0x71, 0x52, 0x06, 0x06, 0xb6, 0x7b, 0xdf, 0xfb, 0xf2, 0xdd,
-	0x77, 0xdf, 0x7b, 0x0e, 0x0c, 0x18, 0xe7, 0x4b, 0xac, 0x46, 0x5c, 0x14, 0xaa, 0x20, 0xbe, 0xad,
-	0xa2, 0xef, 0x0e, 0x74, 0x26, 0x9c, 0x93, 0x7d, 0x70, 0xd3, 0x38, 0x74, 0x86, 0xce, 0x99, 0x47,
-	0xdd, 0x34, 0x26, 0xcf, 0xc1, 0x5b, 0x62, 0x25, 0x43, 0x77, 0xd8, 0x39, 0xeb, 0x9f, 0x1f, 0x8e,
-	0xea, 0x1f, 0x4f, 0x38, 0x1f, 0x5d, 0x63, 0x25, 0xdf, 0xe6, 0x4a, 0x54, 0xd4, 0x50, 0x8e, 0x6f,
-	0xa0, 0xb7, 0x82, 0xc8, 0x01, 0x74, 0x96, 0x58, 0x19, 0xa1, 0x1e, 0xd5, 0x47, 0x32, 0x82, 0xee,
-	0x67, 0x96, 0x95, 0x18, 0xba, 0x43, 0xe7, 0xac, 0x7f, 0x1e, 0xb6, 0xa4, 0xae, 0xb1, 0xba, 0xca,
-	0x63, 0xfc, 0x62, 0xd5, 0x2c, 0xed, 0xb5, 0x7b, 0xe1, 0x44, 0x29, 0xec, 0x4d, 0x38, 0x5f, 0xf7,
-	0x1e, 0xd8, 0x3b, 0x05, 0x5f, 0x8e, 0x67, 0x02, 0x93, 0x5a, 0x75, 0xaf, 0x51, 0xbd, 0x1d, 0x53,
-	0x4c, 0x2e, 0x77, 0x68, 0x57, 0xea, 0x03, 0x79, 0x02, 0xbb, 0xa5, 0xc8, 0x0c, 0xb1, 0xa3, 0x2d,
-	0x5d, 0xee, 0x50, 0xbf, 0x14, 0x19, 0xc5, 0x64, 0xda, 0x85, 0x8e, 0xc0, 0x24, 0xfa, 0xe1, 0x40,
-	0xd0, 0xdc, 0x45, 0x2e, 0x20, 0x60, 0x9c, 0x6b, 0xba, 0x0c, 0x1d, 0xf3, 0xf2, 0x93, 0x96, 0x5d,
-	0xc3, 0xd1, 0x07, 0x8a, 0x49, 0x9d, 0xc0, 0x2e, 0xb3, 0xd5, 0xf1, 0x0d, 0x0c, 0xda, 0x8d, 0x76,
-	0x0e, 0x9e, 0xcd, 0xe1, 0xc5, 0x66, 0x0e, 0x87, 0xdb, 0xc2, 0x0f, 0x42, 0xb8, 0x82, 0xae, 0x79,
-	0x0d, 0x39, 0x02, 0x7f, 0x5e, 0xde, 0x2d, 0x51, 0xd5, 0xb1, 0xd6, 0x55, 0x73, 0x87, 0xbb, 0xce,
-	0xfa, 0x08, 0x7c, 0x81, 0x8b, 0xb4, 0xc8, 0xed, 0x6b, 0x69, 0x5d, 0x45, 0x3f, 0x1d, 0x00, 0x9b,
-	0xf7, 0x7b, 0x54, 0x8c, 0x0c, 0xa1, 0x9f, 0xa4, 0xf9, 0x02, 0x05, 0x17, 0x69, 0xde, 0xa8, 0xb6,
-	0x21, 0x2d, 0xcd, 0x38, 0x37, 0xd2, 0x1e, 0xd5, 0x47, 0x72, 0x0c, 0x41, 0x9c, 0x4a, 0x36, 0xcf,
-	0x30, 0x36, 0xe2, 0x01, 0x5d, 0xd5, 0xe4, 0x04, 0x20, 0x2f, 0xd4, 0x6c, 0x8e, 0x49, 0x21, 0x30,
-	0xf4, 0x8c, 0x5c, 0x2f, 0x2f, 0xd4, 0xd4, 0x00, 0xb6, 0xcd, 0xd4, 0x8c, 0x25, 0x0a, 0x45, 0xd8,
-	0x6d, 0xda, 0x4c, 0x4d, 0x34, 0x10, 0xfd, 0x76, 0xc0, 0xb7, 0xe6, 0xc8, 0x29, 0x78, 0xf7, 0xa8,
-	0x98, 0x71, 0xd4, 0x3f, 0x27, 0x9b, 0xab, 0xa2, 0xad, 0x53, 0xd3, 0x27, 0x27, 0xd0, 0x5b, 0x62,
-	0x35, 0x9b, 0x57, 0x0a, 0xa5, 0x71, 0x33, 0xb8, 0xdc, 0xa1, 0xc1, 0x12, 0xab, 0xa9, 0x46, 0xf4,
-	0xfb, 0xf4, 0xd4, 0x35, 0x45, 0x4f, 0xde, 0xab, 0x27, 0xdf, 0x2b, 0x45, 0x76, 0x8d, 0x95, 0x8e,
-	0xf4, 0x25, 0x80, 0x1c, 0xaf, 0x08, 0xdd, 0xbf, 0xef, 0x50, 0x20, 0xc7, 0x96, 0xae, 0x77, 0x45,
-	0x7f, 0x2c, 0xdf, 0x1c, 0x38, 0xd8, 0x5e, 0xdb, 0x7f, 0xf6, 0xfc, 0xff, 0x56, 0xf6, 0x97, 0x03,
-	0x8f, 0xac, 0xfc, 0x6d, 0xba, 0xc8, 0x29, 0x7e, 0x2a, 0x51, 0xae, 0x46, 0xe6, 0xac, 0x47, 0xf6,
-	0x0c, 0xf6, 0xf5, 0xc7, 0x8e, 0x77, 0x0a, 0xe3, 0x59, 0xcc, 0x14, 0x33, 0x37, 0x0f, 0xe8, 0xde,
-	0x0a, 0x7d, 0xc3, 0x14, 0x23, 0x4f, 0xa1, 0xc7, 0xb2, 0x45, 0x21, 0x52, 0xf5, 0xf1, 0xbe, 0xde,
-	0x9b, 0x35, 0x40, 0xa2, 0xcd, 0x5d, 0x69, 0xb2, 0x6c, 0x83, 0xd3, 0x7d, 0x18, 0xe8, 0x28, 0x25,
-	0x66, 0x78, 0xa7, 0x0a, 0x11, 0x7d, 0x6d, 0x62, 0xd2, 0xfe, 0xd6, 0xb7, 0xc8, 0x74, 0x91, 0x33,
-	0x55, 0x0a, 0x34, 0x26, 0x07, 0x74, 0x0d, 0x6c, 0x7a, 0x70, 0xb7, 0x3d, 0xbc, 0x82, 0xc7, 0x9a,
-	0x9a, 0xe6, 0x8b, 0x59, 0xdb, 0x8b, 0xf5, 0x4a, 0xea, 0xd6, 0xbb, 0x96, 0x21, 0xf8, 0x10, 0xd8,
-	0x70, 0xf9, 0x7c, 0xee, 0x9b, 0x3f, 0xbc, 0xf1, 0x9f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xcf, 0x8f,
-	0xfd, 0x6d, 0x00, 0x05, 0x00, 0x00,
+var fileDescriptor_appkey_522bbaea3781b8f6 = []byte{
+	// 611 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x54, 0x41, 0x6b, 0xdb, 0x4c,
+	0x10, 0xb5, 0x64, 0x59, 0xb1, 0xc7, 0x4e, 0xc8, 0xb7, 0x21, 0x41, 0x5f, 0x68, 0xc0, 0x18, 0x92,
+	0xa6, 0x14, 0x5c, 0x48, 0x2e, 0xa1, 0x37, 0x9b, 0x34, 0x38, 0x84, 0x1e, 0xb2, 0x39, 0x14, 0x7a,
+	0x31, 0x6b, 0x6b, 0xa4, 0x0a, 0x29, 0xd2, 0x76, 0xb5, 0x2a, 0xd5, 0xa9, 0x3f, 0xa2, 0x87, 0x42,
+	0x0f, 0xfd, 0xad, 0x65, 0x77, 0x25, 0x4b, 0x4e, 0x0e, 0xcd, 0x6d, 0xe7, 0xcd, 0xe8, 0xed, 0x9b,
+	0x37, 0xb3, 0x82, 0x11, 0xe3, 0x3c, 0xc6, 0x72, 0xca, 0x45, 0x26, 0x33, 0xe2, 0x9a, 0x68, 0xf2,
+	0x09, 0x86, 0xd7, 0xd9, 0xba, 0x78, 0xc4, 0x54, 0x52, 0x0c, 0xc8, 0x19, 0xb8, 0xf9, 0xe5, 0x52,
+	0x60, 0xe0, 0x59, 0x63, 0xeb, 0x7c, 0x78, 0xb1, 0x3b, 0xad, 0xbe, 0x7a, 0xb8, 0xa4, 0x18, 0x2c,
+	0x3a, 0xb4, 0x97, 0xab, 0x03, 0xf9, 0x1f, 0x76, 0x0a, 0x91, 0xe8, 0x42, 0x7b, 0x6c, 0x9d, 0x0f,
+	0x16, 0x1d, 0xea, 0x16, 0x22, 0xa1, 0x18, 0xcc, 0x7b, 0xd0, 0x15, 0x18, 0x4c, 0x7e, 0x5a, 0xd0,
+	0x9d, 0x71, 0x4e, 0xf6, 0xc0, 0x8e, 0x7c, 0xcd, 0xe6, 0x50, 0x3b, 0xf2, 0xc9, 0x1b, 0x70, 0x62,
+	0x2c, 0x73, 0xcf, 0x1e, 0x77, 0xcf, 0x87, 0x17, 0x87, 0x35, 0xff, 0x8c, 0xf3, 0xe9, 0x1d, 0x96,
+	0xf9, 0x87, 0x54, 0x8a, 0x92, 0xea, 0x92, 0xe3, 0x7b, 0x18, 0x6c, 0x20, 0xb2, 0x0f, 0xdd, 0x18,
+	0x4b, 0x4d, 0x34, 0xa0, 0xea, 0x48, 0xa6, 0xd0, 0xfb, 0xc6, 0x92, 0x02, 0xb5, 0x82, 0xe1, 0x85,
+	0xd7, 0xa2, 0xba, 0xc3, 0xf2, 0x36, 0xf5, 0xf1, 0xbb, 0x61, 0x33, 0x65, 0xef, 0xed, 0x2b, 0x6b,
+	0x72, 0x03, 0xbb, 0x33, 0xce, 0x9b, 0xdc, 0x33, 0x79, 0xa7, 0x5a, 0x7d, 0x45, 0x79, 0x50, 0x53,
+	0xb6, 0x2c, 0xa2, 0xba, 0xbb, 0x5f, 0x16, 0xf4, 0x6b, 0x22, 0x72, 0x05, 0x7d, 0xc6, 0xb9, 0x32,
+	0x23, 0xf7, 0x2c, 0xdd, 0xd6, 0x49, 0x4b, 0x8b, 0xae, 0x51, 0x07, 0x8a, 0x41, 0xd5, 0xde, 0x0e,
+	0x33, 0xd1, 0xf1, 0x3d, 0x8c, 0xda, 0x89, 0x76, 0x93, 0x8e, 0x69, 0xf2, 0xed, 0x76, 0x93, 0x87,
+	0x4f, 0x89, 0x9f, 0x75, 0x78, 0x0b, 0x3d, 0x3d, 0x2b, 0x72, 0x04, 0xee, 0xaa, 0x58, 0xc7, 0x28,
+	0x2b, 0xcf, 0xaa, 0xa8, 0xbe, 0xc3, 0x6e, 0x8c, 0x3c, 0x02, 0x57, 0x60, 0x18, 0x65, 0xa9, 0xd7,
+	0x35, 0x95, 0x26, 0x9a, 0xfc, 0xb6, 0x00, 0x8c, 0x99, 0x1f, 0x51, 0x32, 0x32, 0x86, 0x61, 0x10,
+	0xa5, 0x21, 0x0a, 0x2e, 0xa2, 0xb4, 0x66, 0x6d, 0x43, 0x8a, 0x9a, 0x71, 0xae, 0xa9, 0x1d, 0xaa,
+	0x8e, 0xe4, 0x18, 0xfa, 0x7e, 0x94, 0xb3, 0x55, 0x82, 0xbe, 0x26, 0xef, 0xd3, 0x4d, 0x4c, 0x4e,
+	0x00, 0xd2, 0x4c, 0x2e, 0x57, 0x18, 0x64, 0x02, 0x3d, 0x47, 0xd3, 0x0d, 0xd2, 0x4c, 0xce, 0x35,
+	0x60, 0xd2, 0x4c, 0x2e, 0x59, 0x20, 0x51, 0x78, 0xbd, 0x3a, 0xcd, 0xe4, 0x4c, 0x01, 0x93, 0x1f,
+	0xe0, 0x1a, 0x6d, 0xe4, 0x0c, 0x9c, 0x47, 0x94, 0xac, 0xda, 0x58, 0xb2, 0xbd, 0x06, 0x4a, 0x39,
+	0xd5, 0x79, 0xf2, 0xfa, 0x5f, 0xa3, 0x5d, 0x74, 0xf4, 0x70, 0xc9, 0x09, 0x0c, 0x62, 0x2c, 0x97,
+	0xab, 0x52, 0x62, 0xae, 0x55, 0x8f, 0x16, 0x1d, 0xda, 0x8f, 0xb1, 0x9c, 0x2b, 0x44, 0x2d, 0xb8,
+	0x7a, 0x39, 0x0c, 0xf6, 0x9f, 0x6e, 0xda, 0x8b, 0xa5, 0xbc, 0x70, 0xcb, 0xfe, 0x58, 0xf0, 0x9f,
+	0xf9, 0xf6, 0x21, 0x0a, 0x53, 0x8a, 0x5f, 0x0b, 0xcc, 0x37, 0x2e, 0x5b, 0x8d, 0xcb, 0xa7, 0xb0,
+	0xa7, 0x5e, 0x35, 0xae, 0x25, 0xfa, 0x4b, 0x9f, 0x49, 0xa6, 0x99, 0x47, 0x74, 0x77, 0x83, 0x5e,
+	0x33, 0xc9, 0xc8, 0x2b, 0x18, 0xb0, 0x24, 0xcc, 0x44, 0x24, 0xbf, 0x3c, 0x56, 0xa3, 0x6e, 0x00,
+	0x32, 0xd9, 0x1e, 0xaf, 0x53, 0x3d, 0xeb, 0x36, 0x38, 0xdf, 0x83, 0x91, 0x72, 0x26, 0xc7, 0x04,
+	0xd7, 0x32, 0x53, 0x43, 0xd8, 0x6f, 0xf4, 0x35, 0xb7, 0xe4, 0x51, 0x98, 0x32, 0x59, 0x08, 0xd4,
+	0x22, 0x47, 0xb4, 0x01, 0xb6, 0x35, 0xd8, 0x4f, 0x35, 0xbc, 0x83, 0x03, 0x55, 0x1a, 0xa5, 0xe1,
+	0xb2, 0xad, 0xc5, 0x68, 0x25, 0x55, 0xea, 0xa6, 0x25, 0x08, 0x3e, 0xf7, 0x8d, 0x79, 0x7c, 0xb5,
+	0x72, 0xf5, 0x9f, 0xed, 0xf2, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x91, 0xd7, 0xdc, 0xbc, 0xe9,
+	0x04, 0x00, 0x00,
 }

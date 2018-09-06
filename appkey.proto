@@ -6,6 +6,13 @@ option go_package = "appkeypb";
 //* Data storage messages *
 //*************************
 
+message DocumentRef {
+    oneof ref {
+        S3Ref s3_ref = 1;
+	string url_ref = 2;
+    }
+}
+
 message App {
     uint64 id = 1;
     map<string,AppKeyIndexEntry> keys = 2;
@@ -13,10 +20,7 @@ message App {
 
 message AppIndexEntry {
     uint64 id = 1;
-    oneof ref {
-        S3Ref s3_ref = 2;
-	string url_ref = 3;
-    }
+    DocumentRef ref = 2;
 }
 
 message AppIndex {
@@ -40,18 +44,14 @@ message AppKeyMeta {
 message AppKey {
     AppKeyMeta meta = 1;
     oneof key {
+        DocumentRef ref = 2;
         bytes key_bytes = 3;
-        string url_key_ref = 4;
-        S3Ref s3_key_ref = 5;
     }
 }
 
 message AppKeyIndexEntry {
     AppKeyMeta meta = 1;
-    oneof ref {
-        S3Ref s3_ref = 2;
-	string url_ref = 3;
-    }
+    DocumentRef ref = 2;
 }
 
 //*************************

@@ -19,11 +19,52 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='appkey.proto',
   package='appkey',
   syntax='proto3',
-  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"V\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\x12\x1f\n\x06s3_ref\x18\x02 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\x11\n\x07url_ref\x18\x03 \x01(\tH\x00\x42\x05\n\x03ref\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"\x82\x01\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x13\n\tkey_bytes\x18\x03 \x01(\x0cH\x00\x12\x15\n\x0burl_key_ref\x18\x04 \x01(\tH\x00\x12#\n\ns3_key_ref\x18\x05 \x01(\x0b\x32\r.appkey.S3RefH\x00\x42\x05\n\x03key\"o\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x1f\n\x06s3_ref\x18\x02 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\x11\n\x07url_ref\x18\x03 \x01(\tH\x00\x42\x05\n\x03ref\"r\n\x11\x41ppKeySignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"U\n\x10\x41ppKeySignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\tB\nZ\x08\x61ppkeypbb\x06proto3')
+  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\"H\n\x0b\x44ocumentRef\x12\x1f\n\x06s3_ref\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\x11\n\x07url_ref\x18\x02 \x01(\tH\x00\x42\x05\n\x03ref\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"=\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\x12 \n\x03ref\x18\x02 \x01(\x0b\x32\x13.appkey.DocumentRef\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"j\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\"\n\x03ref\x18\x02 \x01(\x0b\x32\x13.appkey.DocumentRefH\x00\x12\x13\n\tkey_bytes\x18\x03 \x01(\x0cH\x00\x42\x05\n\x03key\"V\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12 \n\x03ref\x18\x02 \x01(\x0b\x32\x13.appkey.DocumentRef\"r\n\x11\x41ppKeySignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"U\n\x10\x41ppKeySignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\tB\nZ\x08\x61ppkeypbb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
+
+
+_DOCUMENTREF = _descriptor.Descriptor(
+  name='DocumentRef',
+  full_name='appkey.DocumentRef',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='s3_ref', full_name='appkey.DocumentRef.s3_ref', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='url_ref', full_name='appkey.DocumentRef.url_ref', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='ref', full_name='appkey.DocumentRef.ref',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=24,
+  serialized_end=96,
+)
 
 
 _APP_KEYSENTRY = _descriptor.Descriptor(
@@ -59,8 +100,8 @@ _APP_KEYSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=80,
-  serialized_end=149,
+  serialized_start=154,
+  serialized_end=223,
 )
 
 _APP = _descriptor.Descriptor(
@@ -96,8 +137,8 @@ _APP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24,
-  serialized_end=149,
+  serialized_start=98,
+  serialized_end=223,
 )
 
 
@@ -116,16 +157,9 @@ _APPINDEXENTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='s3_ref', full_name='appkey.AppIndexEntry.s3_ref', index=1,
+      name='ref', full_name='appkey.AppIndexEntry.ref', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='url_ref', full_name='appkey.AppIndexEntry.url_ref', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -140,12 +174,9 @@ _APPINDEXENTRY = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='ref', full_name='appkey.AppIndexEntry.ref',
-      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=151,
-  serialized_end=237,
+  serialized_start=225,
+  serialized_end=286,
 )
 
 
@@ -182,8 +213,8 @@ _APPINDEX_APPREFSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=370,
+  serialized_start=350,
+  serialized_end=419,
 )
 
 _APPINDEX = _descriptor.Descriptor(
@@ -212,8 +243,8 @@ _APPINDEX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=240,
-  serialized_end=370,
+  serialized_start=289,
+  serialized_end=419,
 )
 
 
@@ -257,8 +288,8 @@ _S3REF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=424,
+  serialized_start=421,
+  serialized_end=473,
 )
 
 
@@ -316,8 +347,8 @@ _APPKEYMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=530,
+  serialized_start=475,
+  serialized_end=579,
 )
 
 
@@ -336,23 +367,16 @@ _APPKEY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='key_bytes', full_name='appkey.AppKey.key_bytes', index=1,
+      name='ref', full_name='appkey.AppKey.ref', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='key_bytes', full_name='appkey.AppKey.key_bytes', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='url_key_ref', full_name='appkey.AppKey.url_key_ref', index=2,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='s3_key_ref', full_name='appkey.AppKey.s3_key_ref', index=3,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -371,8 +395,8 @@ _APPKEY = _descriptor.Descriptor(
       name='key', full_name='appkey.AppKey.key',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=533,
-  serialized_end=663,
+  serialized_start=581,
+  serialized_end=687,
 )
 
 
@@ -391,16 +415,9 @@ _APPKEYINDEXENTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='s3_ref', full_name='appkey.AppKeyIndexEntry.s3_ref', index=1,
+      name='ref', full_name='appkey.AppKeyIndexEntry.ref', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='url_ref', full_name='appkey.AppKeyIndexEntry.url_ref', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -415,12 +432,9 @@ _APPKEYINDEXENTRY = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='ref', full_name='appkey.AppKeyIndexEntry.ref',
-      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=665,
-  serialized_end=776,
+  serialized_start=689,
+  serialized_end=775,
 )
 
 
@@ -474,8 +488,8 @@ _APPKEYSIGNREQUEST = _descriptor.Descriptor(
       name='key_selector', full_name='appkey.AppKeySignRequest.key_selector',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=778,
-  serialized_end=892,
+  serialized_start=777,
+  serialized_end=891,
 )
 
 
@@ -519,45 +533,38 @@ _APPKEYSIGNEDDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=894,
-  serialized_end=979,
+  serialized_start=893,
+  serialized_end=978,
 )
 
+_DOCUMENTREF.fields_by_name['s3_ref'].message_type = _S3REF
+_DOCUMENTREF.oneofs_by_name['ref'].fields.append(
+  _DOCUMENTREF.fields_by_name['s3_ref'])
+_DOCUMENTREF.fields_by_name['s3_ref'].containing_oneof = _DOCUMENTREF.oneofs_by_name['ref']
+_DOCUMENTREF.oneofs_by_name['ref'].fields.append(
+  _DOCUMENTREF.fields_by_name['url_ref'])
+_DOCUMENTREF.fields_by_name['url_ref'].containing_oneof = _DOCUMENTREF.oneofs_by_name['ref']
 _APP_KEYSENTRY.fields_by_name['value'].message_type = _APPKEYINDEXENTRY
 _APP_KEYSENTRY.containing_type = _APP
 _APP.fields_by_name['keys'].message_type = _APP_KEYSENTRY
-_APPINDEXENTRY.fields_by_name['s3_ref'].message_type = _S3REF
-_APPINDEXENTRY.oneofs_by_name['ref'].fields.append(
-  _APPINDEXENTRY.fields_by_name['s3_ref'])
-_APPINDEXENTRY.fields_by_name['s3_ref'].containing_oneof = _APPINDEXENTRY.oneofs_by_name['ref']
-_APPINDEXENTRY.oneofs_by_name['ref'].fields.append(
-  _APPINDEXENTRY.fields_by_name['url_ref'])
-_APPINDEXENTRY.fields_by_name['url_ref'].containing_oneof = _APPINDEXENTRY.oneofs_by_name['ref']
+_APPINDEXENTRY.fields_by_name['ref'].message_type = _DOCUMENTREF
 _APPINDEX_APPREFSENTRY.fields_by_name['value'].message_type = _APPINDEXENTRY
 _APPINDEX_APPREFSENTRY.containing_type = _APPINDEX
 _APPINDEX.fields_by_name['app_refs'].message_type = _APPINDEX_APPREFSENTRY
 _APPKEY.fields_by_name['meta'].message_type = _APPKEYMETA
-_APPKEY.fields_by_name['s3_key_ref'].message_type = _S3REF
+_APPKEY.fields_by_name['ref'].message_type = _DOCUMENTREF
+_APPKEY.oneofs_by_name['key'].fields.append(
+  _APPKEY.fields_by_name['ref'])
+_APPKEY.fields_by_name['ref'].containing_oneof = _APPKEY.oneofs_by_name['key']
 _APPKEY.oneofs_by_name['key'].fields.append(
   _APPKEY.fields_by_name['key_bytes'])
 _APPKEY.fields_by_name['key_bytes'].containing_oneof = _APPKEY.oneofs_by_name['key']
-_APPKEY.oneofs_by_name['key'].fields.append(
-  _APPKEY.fields_by_name['url_key_ref'])
-_APPKEY.fields_by_name['url_key_ref'].containing_oneof = _APPKEY.oneofs_by_name['key']
-_APPKEY.oneofs_by_name['key'].fields.append(
-  _APPKEY.fields_by_name['s3_key_ref'])
-_APPKEY.fields_by_name['s3_key_ref'].containing_oneof = _APPKEY.oneofs_by_name['key']
 _APPKEYINDEXENTRY.fields_by_name['meta'].message_type = _APPKEYMETA
-_APPKEYINDEXENTRY.fields_by_name['s3_ref'].message_type = _S3REF
-_APPKEYINDEXENTRY.oneofs_by_name['ref'].fields.append(
-  _APPKEYINDEXENTRY.fields_by_name['s3_ref'])
-_APPKEYINDEXENTRY.fields_by_name['s3_ref'].containing_oneof = _APPKEYINDEXENTRY.oneofs_by_name['ref']
-_APPKEYINDEXENTRY.oneofs_by_name['ref'].fields.append(
-  _APPKEYINDEXENTRY.fields_by_name['url_ref'])
-_APPKEYINDEXENTRY.fields_by_name['url_ref'].containing_oneof = _APPKEYINDEXENTRY.oneofs_by_name['ref']
+_APPKEYINDEXENTRY.fields_by_name['ref'].message_type = _DOCUMENTREF
 _APPKEYSIGNREQUEST.oneofs_by_name['key_selector'].fields.append(
   _APPKEYSIGNREQUEST.fields_by_name['fingerprint'])
 _APPKEYSIGNREQUEST.fields_by_name['fingerprint'].containing_oneof = _APPKEYSIGNREQUEST.oneofs_by_name['key_selector']
+DESCRIPTOR.message_types_by_name['DocumentRef'] = _DOCUMENTREF
 DESCRIPTOR.message_types_by_name['App'] = _APP
 DESCRIPTOR.message_types_by_name['AppIndexEntry'] = _APPINDEXENTRY
 DESCRIPTOR.message_types_by_name['AppIndex'] = _APPINDEX
@@ -567,6 +574,13 @@ DESCRIPTOR.message_types_by_name['AppKey'] = _APPKEY
 DESCRIPTOR.message_types_by_name['AppKeyIndexEntry'] = _APPKEYINDEXENTRY
 DESCRIPTOR.message_types_by_name['AppKeySignRequest'] = _APPKEYSIGNREQUEST
 DESCRIPTOR.message_types_by_name['AppKeySignedData'] = _APPKEYSIGNEDDATA
+
+DocumentRef = _reflection.GeneratedProtocolMessageType('DocumentRef', (_message.Message,), dict(
+  DESCRIPTOR = _DOCUMENTREF,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.DocumentRef)
+  ))
+_sym_db.RegisterMessage(DocumentRef)
 
 App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), dict(
 
