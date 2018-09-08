@@ -1,0 +1,15 @@
+package appkeypb
+
+import (
+	"github.com/golang/protobuf/proto"
+)
+
+var DefaultLinks Links
+var DefaultLinksPb = []byte{default_links_pb}
+
+func init() {{
+	err := proto.Unmarshal(DefaultLinksPb, &DefaultLinks)
+	if err != nil {{
+		panic(err.Error())
+	}}
+}}
