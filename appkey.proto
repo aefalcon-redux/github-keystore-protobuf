@@ -6,10 +6,10 @@ option go_package = "appkeypb";
 //* Data storage messages *
 //*************************
 
-message DocumentRef {
-    oneof ref {
-        S3Ref s3_ref = 1;
-	string url_ref = 2;
+message Location {
+    oneof location {
+        S3Ref s3 = 1;
+        string url = 2;
     }
 }
 
@@ -20,7 +20,6 @@ message App {
 
 message AppIndexEntry {
     uint64 id = 1;
-    DocumentRef ref = 2;
 }
 
 message AppIndex {
@@ -43,15 +42,27 @@ message AppKeyMeta {
 
 message AppKey {
     AppKeyMeta meta = 1;
-    oneof key {
-        DocumentRef ref = 2;
-        bytes key_bytes = 3;
-    }
+    bytes key = 2;
 }
 
 message AppKeyIndexEntry {
     AppKeyMeta meta = 1;
-    DocumentRef ref = 2;
+}
+
+//**************************
+//* Configuration messages *
+//**************************
+
+
+message AppKeyManagerConfig {
+    Location db_loc = 1;
+}
+
+message Links {
+    string app_index = 1;
+    string app = 2;
+    string key = 3;
+    string key_meta = 4;
 }
 
 //*************************
