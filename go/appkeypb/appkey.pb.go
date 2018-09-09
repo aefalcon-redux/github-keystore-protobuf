@@ -32,7 +32,7 @@ func (m *Location) Reset()         { *m = Location{} }
 func (m *Location) String() string { return proto.CompactTextString(m) }
 func (*Location) ProtoMessage()    {}
 func (*Location) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{0}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{0}
 }
 func (m *Location) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Location.Unmarshal(m, b)
@@ -171,7 +171,7 @@ func (m *App) Reset()         { *m = App{} }
 func (m *App) String() string { return proto.CompactTextString(m) }
 func (*App) ProtoMessage()    {}
 func (*App) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{1}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{1}
 }
 func (m *App) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_App.Unmarshal(m, b)
@@ -216,7 +216,7 @@ func (m *AppIndexEntry) Reset()         { *m = AppIndexEntry{} }
 func (m *AppIndexEntry) String() string { return proto.CompactTextString(m) }
 func (*AppIndexEntry) ProtoMessage()    {}
 func (*AppIndexEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{2}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{2}
 }
 func (m *AppIndexEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppIndexEntry.Unmarshal(m, b)
@@ -254,7 +254,7 @@ func (m *AppIndex) Reset()         { *m = AppIndex{} }
 func (m *AppIndex) String() string { return proto.CompactTextString(m) }
 func (*AppIndex) ProtoMessage()    {}
 func (*AppIndex) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{3}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{3}
 }
 func (m *AppIndex) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppIndex.Unmarshal(m, b)
@@ -294,7 +294,7 @@ func (m *S3Ref) Reset()         { *m = S3Ref{} }
 func (m *S3Ref) String() string { return proto.CompactTextString(m) }
 func (*S3Ref) ProtoMessage()    {}
 func (*S3Ref) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{4}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{4}
 }
 func (m *S3Ref) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_S3Ref.Unmarshal(m, b)
@@ -350,7 +350,7 @@ func (m *AppKeyMeta) Reset()         { *m = AppKeyMeta{} }
 func (m *AppKeyMeta) String() string { return proto.CompactTextString(m) }
 func (*AppKeyMeta) ProtoMessage()    {}
 func (*AppKeyMeta) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{5}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{5}
 }
 func (m *AppKeyMeta) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeyMeta.Unmarshal(m, b)
@@ -417,7 +417,7 @@ func (m *AppKey) Reset()         { *m = AppKey{} }
 func (m *AppKey) String() string { return proto.CompactTextString(m) }
 func (*AppKey) ProtoMessage()    {}
 func (*AppKey) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{6}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{6}
 }
 func (m *AppKey) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKey.Unmarshal(m, b)
@@ -462,7 +462,7 @@ func (m *AppKeyIndexEntry) Reset()         { *m = AppKeyIndexEntry{} }
 func (m *AppKeyIndexEntry) String() string { return proto.CompactTextString(m) }
 func (*AppKeyIndexEntry) ProtoMessage()    {}
 func (*AppKeyIndexEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{7}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{7}
 }
 func (m *AppKeyIndexEntry) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeyIndexEntry.Unmarshal(m, b)
@@ -500,7 +500,7 @@ func (m *AppKeyManagerConfig) Reset()         { *m = AppKeyManagerConfig{} }
 func (m *AppKeyManagerConfig) String() string { return proto.CompactTextString(m) }
 func (*AppKeyManagerConfig) ProtoMessage()    {}
 func (*AppKeyManagerConfig) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{8}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{8}
 }
 func (m *AppKeyManagerConfig) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AppKeyManagerConfig.Unmarshal(m, b)
@@ -541,7 +541,7 @@ func (m *Links) Reset()         { *m = Links{} }
 func (m *Links) String() string { return proto.CompactTextString(m) }
 func (*Links) ProtoMessage()    {}
 func (*Links) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{9}
+	return fileDescriptor_appkey_c0107c8164e25026, []int{9}
 }
 func (m *Links) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Links.Unmarshal(m, b)
@@ -589,128 +589,492 @@ func (m *Links) GetKeyMeta() string {
 	return ""
 }
 
-type AppKeySignRequest struct {
-	App           uint64 `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
-	ProtectedData []byte `protobuf:"bytes,2,opt,name=protected_data,json=protectedData,proto3" json:"protected_data,omitempty"`
-	Algorithm     string `protobuf:"bytes,3,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
-	// Types that are valid to be assigned to KeySelector:
-	//	*AppKeySignRequest_Fingerprint
-	KeySelector          isAppKeySignRequest_KeySelector `protobuf_oneof:"key_selector"`
-	XXX_NoUnkeyedLiteral struct{}                        `json:"-"`
-	XXX_unrecognized     []byte                          `json:"-"`
-	XXX_sizecache        int32                           `json:"-"`
+type AddAppRequest struct {
+	App                  uint64    `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	Keys                 []*AppKey `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
 }
 
-func (m *AppKeySignRequest) Reset()         { *m = AppKeySignRequest{} }
-func (m *AppKeySignRequest) String() string { return proto.CompactTextString(m) }
-func (*AppKeySignRequest) ProtoMessage()    {}
-func (*AppKeySignRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{10}
+func (m *AddAppRequest) Reset()         { *m = AddAppRequest{} }
+func (m *AddAppRequest) String() string { return proto.CompactTextString(m) }
+func (*AddAppRequest) ProtoMessage()    {}
+func (*AddAppRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{10}
 }
-func (m *AppKeySignRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AppKeySignRequest.Unmarshal(m, b)
+func (m *AddAppRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddAppRequest.Unmarshal(m, b)
 }
-func (m *AppKeySignRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AppKeySignRequest.Marshal(b, m, deterministic)
+func (m *AddAppRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddAppRequest.Marshal(b, m, deterministic)
 }
-func (dst *AppKeySignRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AppKeySignRequest.Merge(dst, src)
+func (dst *AddAppRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddAppRequest.Merge(dst, src)
 }
-func (m *AppKeySignRequest) XXX_Size() int {
-	return xxx_messageInfo_AppKeySignRequest.Size(m)
+func (m *AddAppRequest) XXX_Size() int {
+	return xxx_messageInfo_AddAppRequest.Size(m)
 }
-func (m *AppKeySignRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_AppKeySignRequest.DiscardUnknown(m)
+func (m *AddAppRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddAppRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_AppKeySignRequest proto.InternalMessageInfo
+var xxx_messageInfo_AddAppRequest proto.InternalMessageInfo
 
-func (m *AppKeySignRequest) GetApp() uint64 {
+func (m *AddAppRequest) GetApp() uint64 {
 	if m != nil {
 		return m.App
 	}
 	return 0
 }
 
-func (m *AppKeySignRequest) GetProtectedData() []byte {
+func (m *AddAppRequest) GetKeys() []*AppKey {
+	if m != nil {
+		return m.Keys
+	}
+	return nil
+}
+
+type AddAppResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AddAppResponse) Reset()         { *m = AddAppResponse{} }
+func (m *AddAppResponse) String() string { return proto.CompactTextString(m) }
+func (*AddAppResponse) ProtoMessage()    {}
+func (*AddAppResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{11}
+}
+func (m *AddAppResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddAppResponse.Unmarshal(m, b)
+}
+func (m *AddAppResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddAppResponse.Marshal(b, m, deterministic)
+}
+func (dst *AddAppResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddAppResponse.Merge(dst, src)
+}
+func (m *AddAppResponse) XXX_Size() int {
+	return xxx_messageInfo_AddAppResponse.Size(m)
+}
+func (m *AddAppResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddAppResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddAppResponse proto.InternalMessageInfo
+
+type RemoveAppRequest struct {
+	App                  uint64   `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RemoveAppRequest) Reset()         { *m = RemoveAppRequest{} }
+func (m *RemoveAppRequest) String() string { return proto.CompactTextString(m) }
+func (*RemoveAppRequest) ProtoMessage()    {}
+func (*RemoveAppRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{12}
+}
+func (m *RemoveAppRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RemoveAppRequest.Unmarshal(m, b)
+}
+func (m *RemoveAppRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RemoveAppRequest.Marshal(b, m, deterministic)
+}
+func (dst *RemoveAppRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RemoveAppRequest.Merge(dst, src)
+}
+func (m *RemoveAppRequest) XXX_Size() int {
+	return xxx_messageInfo_RemoveAppRequest.Size(m)
+}
+func (m *RemoveAppRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RemoveAppRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RemoveAppRequest proto.InternalMessageInfo
+
+func (m *RemoveAppRequest) GetApp() uint64 {
+	if m != nil {
+		return m.App
+	}
+	return 0
+}
+
+type RemoveAppResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RemoveAppResponse) Reset()         { *m = RemoveAppResponse{} }
+func (m *RemoveAppResponse) String() string { return proto.CompactTextString(m) }
+func (*RemoveAppResponse) ProtoMessage()    {}
+func (*RemoveAppResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{13}
+}
+func (m *RemoveAppResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RemoveAppResponse.Unmarshal(m, b)
+}
+func (m *RemoveAppResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RemoveAppResponse.Marshal(b, m, deterministic)
+}
+func (dst *RemoveAppResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RemoveAppResponse.Merge(dst, src)
+}
+func (m *RemoveAppResponse) XXX_Size() int {
+	return xxx_messageInfo_RemoveAppResponse.Size(m)
+}
+func (m *RemoveAppResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RemoveAppResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RemoveAppResponse proto.InternalMessageInfo
+
+type GetAppRequest struct {
+	App                  uint64   `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetAppRequest) Reset()         { *m = GetAppRequest{} }
+func (m *GetAppRequest) String() string { return proto.CompactTextString(m) }
+func (*GetAppRequest) ProtoMessage()    {}
+func (*GetAppRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{14}
+}
+func (m *GetAppRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetAppRequest.Unmarshal(m, b)
+}
+func (m *GetAppRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetAppRequest.Marshal(b, m, deterministic)
+}
+func (dst *GetAppRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetAppRequest.Merge(dst, src)
+}
+func (m *GetAppRequest) XXX_Size() int {
+	return xxx_messageInfo_GetAppRequest.Size(m)
+}
+func (m *GetAppRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetAppRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetAppRequest proto.InternalMessageInfo
+
+func (m *GetAppRequest) GetApp() uint64 {
+	if m != nil {
+		return m.App
+	}
+	return 0
+}
+
+type ListAppsRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListAppsRequest) Reset()         { *m = ListAppsRequest{} }
+func (m *ListAppsRequest) String() string { return proto.CompactTextString(m) }
+func (*ListAppsRequest) ProtoMessage()    {}
+func (*ListAppsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{15}
+}
+func (m *ListAppsRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListAppsRequest.Unmarshal(m, b)
+}
+func (m *ListAppsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListAppsRequest.Marshal(b, m, deterministic)
+}
+func (dst *ListAppsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListAppsRequest.Merge(dst, src)
+}
+func (m *ListAppsRequest) XXX_Size() int {
+	return xxx_messageInfo_ListAppsRequest.Size(m)
+}
+func (m *ListAppsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListAppsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListAppsRequest proto.InternalMessageInfo
+
+type AddKeyRequest struct {
+	App                  uint64    `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	Keys                 []*AppKey `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+
+func (m *AddKeyRequest) Reset()         { *m = AddKeyRequest{} }
+func (m *AddKeyRequest) String() string { return proto.CompactTextString(m) }
+func (*AddKeyRequest) ProtoMessage()    {}
+func (*AddKeyRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{16}
+}
+func (m *AddKeyRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddKeyRequest.Unmarshal(m, b)
+}
+func (m *AddKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddKeyRequest.Marshal(b, m, deterministic)
+}
+func (dst *AddKeyRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddKeyRequest.Merge(dst, src)
+}
+func (m *AddKeyRequest) XXX_Size() int {
+	return xxx_messageInfo_AddKeyRequest.Size(m)
+}
+func (m *AddKeyRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddKeyRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddKeyRequest proto.InternalMessageInfo
+
+func (m *AddKeyRequest) GetApp() uint64 {
+	if m != nil {
+		return m.App
+	}
+	return 0
+}
+
+func (m *AddKeyRequest) GetKeys() []*AppKey {
+	if m != nil {
+		return m.Keys
+	}
+	return nil
+}
+
+type AddKeyResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AddKeyResponse) Reset()         { *m = AddKeyResponse{} }
+func (m *AddKeyResponse) String() string { return proto.CompactTextString(m) }
+func (*AddKeyResponse) ProtoMessage()    {}
+func (*AddKeyResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{17}
+}
+func (m *AddKeyResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AddKeyResponse.Unmarshal(m, b)
+}
+func (m *AddKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AddKeyResponse.Marshal(b, m, deterministic)
+}
+func (dst *AddKeyResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AddKeyResponse.Merge(dst, src)
+}
+func (m *AddKeyResponse) XXX_Size() int {
+	return xxx_messageInfo_AddKeyResponse.Size(m)
+}
+func (m *AddKeyResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_AddKeyResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AddKeyResponse proto.InternalMessageInfo
+
+type RemoveKeyRequest struct {
+	App                  uint64   `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	Fingerprints         []string `protobuf:"bytes,2,rep,name=fingerprints,proto3" json:"fingerprints,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RemoveKeyRequest) Reset()         { *m = RemoveKeyRequest{} }
+func (m *RemoveKeyRequest) String() string { return proto.CompactTextString(m) }
+func (*RemoveKeyRequest) ProtoMessage()    {}
+func (*RemoveKeyRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{18}
+}
+func (m *RemoveKeyRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RemoveKeyRequest.Unmarshal(m, b)
+}
+func (m *RemoveKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RemoveKeyRequest.Marshal(b, m, deterministic)
+}
+func (dst *RemoveKeyRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RemoveKeyRequest.Merge(dst, src)
+}
+func (m *RemoveKeyRequest) XXX_Size() int {
+	return xxx_messageInfo_RemoveKeyRequest.Size(m)
+}
+func (m *RemoveKeyRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_RemoveKeyRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RemoveKeyRequest proto.InternalMessageInfo
+
+func (m *RemoveKeyRequest) GetApp() uint64 {
+	if m != nil {
+		return m.App
+	}
+	return 0
+}
+
+func (m *RemoveKeyRequest) GetFingerprints() []string {
+	if m != nil {
+		return m.Fingerprints
+	}
+	return nil
+}
+
+type RemoveKeyResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RemoveKeyResponse) Reset()         { *m = RemoveKeyResponse{} }
+func (m *RemoveKeyResponse) String() string { return proto.CompactTextString(m) }
+func (*RemoveKeyResponse) ProtoMessage()    {}
+func (*RemoveKeyResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{19}
+}
+func (m *RemoveKeyResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RemoveKeyResponse.Unmarshal(m, b)
+}
+func (m *RemoveKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RemoveKeyResponse.Marshal(b, m, deterministic)
+}
+func (dst *RemoveKeyResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RemoveKeyResponse.Merge(dst, src)
+}
+func (m *RemoveKeyResponse) XXX_Size() int {
+	return xxx_messageInfo_RemoveKeyResponse.Size(m)
+}
+func (m *RemoveKeyResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_RemoveKeyResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RemoveKeyResponse proto.InternalMessageInfo
+
+type SignRequest struct {
+	App           uint64 `protobuf:"varint,1,opt,name=app,proto3" json:"app,omitempty"`
+	ProtectedData []byte `protobuf:"bytes,2,opt,name=protected_data,json=protectedData,proto3" json:"protected_data,omitempty"`
+	Algorithm     string `protobuf:"bytes,3,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
+	// Types that are valid to be assigned to KeySelector:
+	//	*SignRequest_Fingerprint
+	KeySelector          isSignRequest_KeySelector `protobuf_oneof:"key_selector"`
+	XXX_NoUnkeyedLiteral struct{}                  `json:"-"`
+	XXX_unrecognized     []byte                    `json:"-"`
+	XXX_sizecache        int32                     `json:"-"`
+}
+
+func (m *SignRequest) Reset()         { *m = SignRequest{} }
+func (m *SignRequest) String() string { return proto.CompactTextString(m) }
+func (*SignRequest) ProtoMessage()    {}
+func (*SignRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{20}
+}
+func (m *SignRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SignRequest.Unmarshal(m, b)
+}
+func (m *SignRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SignRequest.Marshal(b, m, deterministic)
+}
+func (dst *SignRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SignRequest.Merge(dst, src)
+}
+func (m *SignRequest) XXX_Size() int {
+	return xxx_messageInfo_SignRequest.Size(m)
+}
+func (m *SignRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_SignRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SignRequest proto.InternalMessageInfo
+
+func (m *SignRequest) GetApp() uint64 {
+	if m != nil {
+		return m.App
+	}
+	return 0
+}
+
+func (m *SignRequest) GetProtectedData() []byte {
 	if m != nil {
 		return m.ProtectedData
 	}
 	return nil
 }
 
-func (m *AppKeySignRequest) GetAlgorithm() string {
+func (m *SignRequest) GetAlgorithm() string {
 	if m != nil {
 		return m.Algorithm
 	}
 	return ""
 }
 
-type isAppKeySignRequest_KeySelector interface {
-	isAppKeySignRequest_KeySelector()
+type isSignRequest_KeySelector interface {
+	isSignRequest_KeySelector()
 }
 
-type AppKeySignRequest_Fingerprint struct {
+type SignRequest_Fingerprint struct {
 	Fingerprint string `protobuf:"bytes,4,opt,name=fingerprint,proto3,oneof"`
 }
 
-func (*AppKeySignRequest_Fingerprint) isAppKeySignRequest_KeySelector() {}
+func (*SignRequest_Fingerprint) isSignRequest_KeySelector() {}
 
-func (m *AppKeySignRequest) GetKeySelector() isAppKeySignRequest_KeySelector {
+func (m *SignRequest) GetKeySelector() isSignRequest_KeySelector {
 	if m != nil {
 		return m.KeySelector
 	}
 	return nil
 }
 
-func (m *AppKeySignRequest) GetFingerprint() string {
-	if x, ok := m.GetKeySelector().(*AppKeySignRequest_Fingerprint); ok {
+func (m *SignRequest) GetFingerprint() string {
+	if x, ok := m.GetKeySelector().(*SignRequest_Fingerprint); ok {
 		return x.Fingerprint
 	}
 	return ""
 }
 
 // XXX_OneofFuncs is for the internal use of the proto package.
-func (*AppKeySignRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _AppKeySignRequest_OneofMarshaler, _AppKeySignRequest_OneofUnmarshaler, _AppKeySignRequest_OneofSizer, []interface{}{
-		(*AppKeySignRequest_Fingerprint)(nil),
+func (*SignRequest) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _SignRequest_OneofMarshaler, _SignRequest_OneofUnmarshaler, _SignRequest_OneofSizer, []interface{}{
+		(*SignRequest_Fingerprint)(nil),
 	}
 }
 
-func _AppKeySignRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*AppKeySignRequest)
+func _SignRequest_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*SignRequest)
 	// key_selector
 	switch x := m.KeySelector.(type) {
-	case *AppKeySignRequest_Fingerprint:
+	case *SignRequest_Fingerprint:
 		b.EncodeVarint(4<<3 | proto.WireBytes)
 		b.EncodeStringBytes(x.Fingerprint)
 	case nil:
 	default:
-		return fmt.Errorf("AppKeySignRequest.KeySelector has unexpected type %T", x)
+		return fmt.Errorf("SignRequest.KeySelector has unexpected type %T", x)
 	}
 	return nil
 }
 
-func _AppKeySignRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*AppKeySignRequest)
+func _SignRequest_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*SignRequest)
 	switch tag {
 	case 4: // key_selector.fingerprint
 		if wire != proto.WireBytes {
 			return true, proto.ErrInternalBadWireType
 		}
 		x, err := b.DecodeStringBytes()
-		m.KeySelector = &AppKeySignRequest_Fingerprint{x}
+		m.KeySelector = &SignRequest_Fingerprint{x}
 		return true, err
 	default:
 		return false, nil
 	}
 }
 
-func _AppKeySignRequest_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*AppKeySignRequest)
+func _SignRequest_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*SignRequest)
 	// key_selector
 	switch x := m.KeySelector.(type) {
-	case *AppKeySignRequest_Fingerprint:
+	case *SignRequest_Fingerprint:
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(len(x.Fingerprint)))
 		n += len(x.Fingerprint)
@@ -721,7 +1085,7 @@ func _AppKeySignRequest_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
-type AppKeySignedData struct {
+type SignedData struct {
 	Signature            []byte   `protobuf:"bytes,1,opt,name=signature,proto3" json:"signature,omitempty"`
 	Algorithm            string   `protobuf:"bytes,2,opt,name=algorithm,proto3" json:"algorithm,omitempty"`
 	SigningFingerprint   string   `protobuf:"bytes,3,opt,name=signing_fingerprint,json=signingFingerprint,proto3" json:"signing_fingerprint,omitempty"`
@@ -730,45 +1094,45 @@ type AppKeySignedData struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *AppKeySignedData) Reset()         { *m = AppKeySignedData{} }
-func (m *AppKeySignedData) String() string { return proto.CompactTextString(m) }
-func (*AppKeySignedData) ProtoMessage()    {}
-func (*AppKeySignedData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_appkey_842c292ab0e4f42d, []int{11}
+func (m *SignedData) Reset()         { *m = SignedData{} }
+func (m *SignedData) String() string { return proto.CompactTextString(m) }
+func (*SignedData) ProtoMessage()    {}
+func (*SignedData) Descriptor() ([]byte, []int) {
+	return fileDescriptor_appkey_c0107c8164e25026, []int{21}
 }
-func (m *AppKeySignedData) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AppKeySignedData.Unmarshal(m, b)
+func (m *SignedData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SignedData.Unmarshal(m, b)
 }
-func (m *AppKeySignedData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AppKeySignedData.Marshal(b, m, deterministic)
+func (m *SignedData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SignedData.Marshal(b, m, deterministic)
 }
-func (dst *AppKeySignedData) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AppKeySignedData.Merge(dst, src)
+func (dst *SignedData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SignedData.Merge(dst, src)
 }
-func (m *AppKeySignedData) XXX_Size() int {
-	return xxx_messageInfo_AppKeySignedData.Size(m)
+func (m *SignedData) XXX_Size() int {
+	return xxx_messageInfo_SignedData.Size(m)
 }
-func (m *AppKeySignedData) XXX_DiscardUnknown() {
-	xxx_messageInfo_AppKeySignedData.DiscardUnknown(m)
+func (m *SignedData) XXX_DiscardUnknown() {
+	xxx_messageInfo_SignedData.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_AppKeySignedData proto.InternalMessageInfo
+var xxx_messageInfo_SignedData proto.InternalMessageInfo
 
-func (m *AppKeySignedData) GetSignature() []byte {
+func (m *SignedData) GetSignature() []byte {
 	if m != nil {
 		return m.Signature
 	}
 	return nil
 }
 
-func (m *AppKeySignedData) GetAlgorithm() string {
+func (m *SignedData) GetAlgorithm() string {
 	if m != nil {
 		return m.Algorithm
 	}
 	return ""
 }
 
-func (m *AppKeySignedData) GetSigningFingerprint() string {
+func (m *SignedData) GetSigningFingerprint() string {
 	if m != nil {
 		return m.SigningFingerprint
 	}
@@ -788,52 +1152,76 @@ func init() {
 	proto.RegisterType((*AppKeyIndexEntry)(nil), "appkey.AppKeyIndexEntry")
 	proto.RegisterType((*AppKeyManagerConfig)(nil), "appkey.AppKeyManagerConfig")
 	proto.RegisterType((*Links)(nil), "appkey.Links")
-	proto.RegisterType((*AppKeySignRequest)(nil), "appkey.AppKeySignRequest")
-	proto.RegisterType((*AppKeySignedData)(nil), "appkey.AppKeySignedData")
+	proto.RegisterType((*AddAppRequest)(nil), "appkey.AddAppRequest")
+	proto.RegisterType((*AddAppResponse)(nil), "appkey.AddAppResponse")
+	proto.RegisterType((*RemoveAppRequest)(nil), "appkey.RemoveAppRequest")
+	proto.RegisterType((*RemoveAppResponse)(nil), "appkey.RemoveAppResponse")
+	proto.RegisterType((*GetAppRequest)(nil), "appkey.GetAppRequest")
+	proto.RegisterType((*ListAppsRequest)(nil), "appkey.ListAppsRequest")
+	proto.RegisterType((*AddKeyRequest)(nil), "appkey.AddKeyRequest")
+	proto.RegisterType((*AddKeyResponse)(nil), "appkey.AddKeyResponse")
+	proto.RegisterType((*RemoveKeyRequest)(nil), "appkey.RemoveKeyRequest")
+	proto.RegisterType((*RemoveKeyResponse)(nil), "appkey.RemoveKeyResponse")
+	proto.RegisterType((*SignRequest)(nil), "appkey.SignRequest")
+	proto.RegisterType((*SignedData)(nil), "appkey.SignedData")
 }
 
-func init() { proto.RegisterFile("appkey.proto", fileDescriptor_appkey_842c292ab0e4f42d) }
+func init() { proto.RegisterFile("appkey.proto", fileDescriptor_appkey_c0107c8164e25026) }
 
-var fileDescriptor_appkey_842c292ab0e4f42d = []byte{
-	// 637 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x94, 0x4b, 0x6f, 0xd3, 0x4c,
-	0x14, 0x86, 0x6b, 0xe7, 0x52, 0xe7, 0x24, 0xad, 0xfa, 0x4d, 0xd5, 0xca, 0x5f, 0xa1, 0x6a, 0x64,
-	0x09, 0x28, 0x42, 0x0a, 0x52, 0xb3, 0xa9, 0xba, 0x40, 0x4a, 0xb8, 0xa8, 0x55, 0xcb, 0xa2, 0xee,
-	0x8e, 0x4d, 0x34, 0x89, 0x4f, 0xcc, 0xc8, 0xee, 0x78, 0xb0, 0x27, 0x08, 0xaf, 0xf8, 0x11, 0x2c,
-	0x90, 0x58, 0xf0, 0x5b, 0xd1, 0x5c, 0x1c, 0x3b, 0x61, 0xc3, 0xce, 0xe7, 0xa2, 0x77, 0x9e, 0x79,
-	0xcf, 0x19, 0xc3, 0x80, 0x0a, 0x91, 0x60, 0x39, 0x12, 0x79, 0x26, 0x33, 0xd2, 0x35, 0x51, 0x70,
-	0x0b, 0xde, 0x5d, 0xb6, 0xa0, 0x92, 0x65, 0x9c, 0x9c, 0x81, 0x5b, 0x8c, 0x7d, 0x67, 0xe8, 0x9c,
-	0xf7, 0x2f, 0xf6, 0x46, 0xb6, 0xfd, 0x61, 0x1c, 0xe2, 0xf2, 0x7a, 0x27, 0x74, 0x8b, 0x31, 0x21,
-	0xd0, 0x5a, 0xe5, 0xa9, 0xef, 0x0e, 0x9d, 0xf3, 0xde, 0xf5, 0x4e, 0xa8, 0x82, 0x29, 0x80, 0x97,
-	0x5a, 0x81, 0xe0, 0x87, 0x03, 0xad, 0x89, 0x10, 0x64, 0x1f, 0x5c, 0x16, 0x69, 0xa1, 0x76, 0xe8,
-	0xb2, 0x88, 0xbc, 0x84, 0x76, 0x82, 0x65, 0xe1, 0xbb, 0xc3, 0xd6, 0x79, 0xff, 0xe2, 0xa8, 0x92,
-	0x9e, 0x08, 0x31, 0xba, 0xc5, 0xb2, 0x78, 0xcf, 0x65, 0x5e, 0x86, 0xba, 0xe5, 0xe4, 0x1e, 0x7a,
-	0xeb, 0x14, 0x39, 0x80, 0x56, 0x82, 0xa5, 0x16, 0xea, 0x85, 0xea, 0x93, 0x8c, 0xa0, 0xf3, 0x95,
-	0xa6, 0x2b, 0xd4, 0x0c, 0xfd, 0x0b, 0xbf, 0x21, 0x75, 0x8b, 0xe5, 0x0d, 0x8f, 0xf0, 0x9b, 0x51,
-	0x33, 0x6d, 0x57, 0xee, 0xa5, 0x13, 0x9c, 0xc1, 0xde, 0x44, 0x88, 0xba, 0xb6, 0x8d, 0x17, 0xfc,
-	0x74, 0xc0, 0xab, 0x3a, 0xc8, 0x25, 0x78, 0x54, 0x88, 0x59, 0x8e, 0xcb, 0xc2, 0x77, 0x34, 0xef,
-	0x69, 0xe3, 0x10, 0xdd, 0xa3, 0x3e, 0x42, 0x5c, 0x5a, 0xee, 0x5d, 0x6a, 0xa2, 0x93, 0x7b, 0x18,
-	0x34, 0x0b, 0x4d, 0xfa, 0xb6, 0xa1, 0x7f, 0xb5, 0x49, 0x7f, 0xb4, 0x2d, 0xfc, 0x17, 0xfa, 0x0d,
-	0x74, 0xb4, 0xff, 0xe4, 0x18, 0xba, 0xf3, 0xd5, 0x22, 0x41, 0x69, 0xcd, 0xb0, 0x51, 0x75, 0x86,
-	0x5b, 0x3b, 0x74, 0x0c, 0xdd, 0x1c, 0x63, 0x96, 0x71, 0xbf, 0x65, 0x3a, 0x4d, 0x14, 0xfc, 0x72,
-	0x00, 0x8c, 0x4b, 0x1f, 0x51, 0x52, 0x32, 0x84, 0xfe, 0x92, 0xf1, 0x18, 0x73, 0x91, 0x33, 0x5e,
-	0xa9, 0x36, 0x53, 0x4a, 0x9a, 0x0a, 0xa1, 0xa5, 0xdb, 0xa1, 0xfa, 0x24, 0x27, 0xe0, 0x45, 0xac,
-	0xa0, 0xf3, 0x14, 0x23, 0x2d, 0xee, 0x85, 0xeb, 0x98, 0x9c, 0x02, 0xf0, 0x4c, 0xce, 0xe6, 0xb8,
-	0xcc, 0x72, 0xf4, 0xdb, 0x5a, 0xae, 0xc7, 0x33, 0x39, 0xd5, 0x09, 0x53, 0xa6, 0x72, 0x46, 0x97,
-	0x12, 0x73, 0xbf, 0x53, 0x95, 0xa9, 0x9c, 0xa8, 0x44, 0x30, 0x85, 0xae, 0x61, 0x23, 0xcf, 0xa1,
-	0xfd, 0x88, 0x92, 0xda, 0x2d, 0x24, 0x9b, 0xf3, 0x55, 0xe4, 0xa1, 0xae, 0x37, 0x2f, 0x3e, 0xd0,
-	0x17, 0x0f, 0xae, 0xe0, 0x60, 0x7b, 0x0b, 0xfe, 0x55, 0x2d, 0x78, 0x03, 0x87, 0x36, 0x47, 0x39,
-	0x8d, 0x31, 0x7f, 0x9b, 0xf1, 0x25, 0x8b, 0xc9, 0x0b, 0xe8, 0x46, 0xf3, 0x59, 0x9a, 0x2d, 0xac,
-	0xc0, 0x41, 0x25, 0x50, 0x3d, 0x99, 0xb0, 0x13, 0xcd, 0xef, 0xb2, 0x45, 0xb0, 0x80, 0xce, 0x1d,
-	0xe3, 0x49, 0x41, 0x9e, 0x40, 0x4f, 0x6d, 0x0f, 0x53, 0x08, 0xd6, 0x54, 0xb5, 0x4e, 0x66, 0xb5,
-	0x1a, 0x8e, 0xf6, 0x8c, 0xa3, 0xf6, 0x16, 0xad, 0x7a, 0x7c, 0xff, 0x83, 0x97, 0x60, 0x39, 0xd3,
-	0xd4, 0xc6, 0xc5, 0xdd, 0xc4, 0xa0, 0x06, 0xbf, 0x1d, 0xf8, 0xcf, 0x50, 0x3e, 0xb0, 0x98, 0x87,
-	0xf8, 0x65, 0x85, 0xc5, 0x7a, 0x4c, 0x4e, 0x3d, 0xa6, 0x67, 0xb0, 0xaf, 0xde, 0x38, 0x2e, 0x24,
-	0x46, 0xb3, 0x88, 0x4a, 0x6a, 0x5d, 0xda, 0x5b, 0x67, 0xdf, 0x51, 0x49, 0xc9, 0x53, 0xe8, 0xd1,
-	0x34, 0xce, 0x72, 0x26, 0x3f, 0x3f, 0x5a, 0x82, 0x3a, 0x41, 0x82, 0xcd, 0xfd, 0x68, 0xdb, 0x27,
-	0xdf, 0x4c, 0x4e, 0xf7, 0x61, 0xa0, 0x58, 0x0b, 0x4c, 0x71, 0x21, 0xb3, 0x3c, 0xf8, 0x5e, 0x4d,
-	0x40, 0xf1, 0xd5, 0xa7, 0x14, 0x2c, 0xe6, 0x54, 0xae, 0x72, 0xd4, 0x90, 0x83, 0xb0, 0x4e, 0x6c,
-	0x32, 0xb8, 0xdb, 0x0c, 0xaf, 0xe1, 0x50, 0xb5, 0x32, 0x1e, 0xcf, 0x9a, 0x2c, 0x86, 0x95, 0xd8,
-	0xd2, 0x87, 0x06, 0x10, 0x7c, 0xf2, 0xcc, 0x80, 0xc4, 0x7c, 0xde, 0xd5, 0xff, 0xb9, 0xf1, 0x9f,
-	0x00, 0x00, 0x00, 0xff, 0xff, 0xde, 0xc4, 0x40, 0x33, 0xf7, 0x04, 0x00, 0x00,
+var fileDescriptor_appkey_c0107c8164e25026 = []byte{
+	// 855 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0x5b, 0x6f, 0xe3, 0x44,
+	0x14, 0x5e, 0x3b, 0x97, 0xc6, 0x27, 0x17, 0xd2, 0xa9, 0xb6, 0xa4, 0x81, 0xd5, 0x96, 0x11, 0x97,
+	0x22, 0x50, 0x57, 0x4a, 0x91, 0x58, 0xed, 0x03, 0x22, 0x81, 0x85, 0xae, 0x5a, 0x1e, 0xd6, 0x7d,
+	0xe3, 0x25, 0x9a, 0xc4, 0x27, 0x61, 0x94, 0xd4, 0x1e, 0xec, 0x49, 0x85, 0x7f, 0x07, 0x0f, 0x20,
+	0xfe, 0x23, 0xff, 0x01, 0xcd, 0xc5, 0xf6, 0xd8, 0x2c, 0x0b, 0x0f, 0xbc, 0x79, 0xbe, 0x73, 0xe6,
+	0x9b, 0xef, 0x9c, 0xf9, 0xe6, 0x24, 0x30, 0x60, 0x42, 0xec, 0x30, 0xbf, 0x14, 0x69, 0x22, 0x13,
+	0xd2, 0x35, 0x2b, 0x7a, 0x03, 0xbd, 0xdb, 0x64, 0xcd, 0x24, 0x4f, 0x62, 0xf2, 0x14, 0xfc, 0xec,
+	0x6a, 0xe2, 0x9d, 0x7b, 0x17, 0xfd, 0xd9, 0xf0, 0xd2, 0xa6, 0xdf, 0x5d, 0x85, 0xb8, 0xb9, 0x7e,
+	0x14, 0xfa, 0xd9, 0x15, 0x21, 0xd0, 0x3a, 0xa4, 0xfb, 0x89, 0x7f, 0xee, 0x5d, 0x04, 0xd7, 0x8f,
+	0x42, 0xb5, 0x58, 0x00, 0xf4, 0xf6, 0x96, 0x80, 0xfe, 0xea, 0x41, 0x6b, 0x2e, 0x04, 0x19, 0x81,
+	0xcf, 0x23, 0x4d, 0xd4, 0x0e, 0x7d, 0x1e, 0x91, 0x4f, 0xa1, 0xbd, 0xc3, 0x3c, 0x9b, 0xf8, 0xe7,
+	0xad, 0x8b, 0xfe, 0xec, 0x71, 0x41, 0x3d, 0x17, 0xe2, 0xf2, 0x06, 0xf3, 0xec, 0x65, 0x2c, 0xd3,
+	0x3c, 0xd4, 0x29, 0xd3, 0xd7, 0x10, 0x94, 0x10, 0x19, 0x43, 0x6b, 0x87, 0xb9, 0x26, 0x0a, 0x42,
+	0xf5, 0x49, 0x2e, 0xa1, 0xf3, 0xc0, 0xf6, 0x07, 0xd4, 0x1a, 0xfa, 0xb3, 0x89, 0x43, 0x75, 0x83,
+	0xf9, 0xab, 0x38, 0xc2, 0x5f, 0x0c, 0x9b, 0x49, 0x7b, 0xe1, 0x3f, 0xf7, 0xe8, 0x53, 0x18, 0xce,
+	0x85, 0xa8, 0x62, 0x4d, 0x79, 0xf4, 0x37, 0x0f, 0x7a, 0x45, 0x06, 0x79, 0x0e, 0x3d, 0x26, 0xc4,
+	0x32, 0xc5, 0x4d, 0x36, 0xf1, 0xb4, 0xde, 0x27, 0xce, 0x21, 0x3a, 0x47, 0x7d, 0x84, 0xb8, 0xb1,
+	0xba, 0x8f, 0x98, 0x59, 0x4d, 0x5f, 0xc3, 0xc0, 0x0d, 0xb8, 0xea, 0xdb, 0x46, 0xfd, 0x67, 0x75,
+	0xf5, 0x8f, 0x9b, 0xc4, 0x7f, 0x93, 0xfe, 0x0a, 0x3a, 0xba, 0xff, 0xe4, 0x14, 0xba, 0xab, 0xc3,
+	0x7a, 0x87, 0xd2, 0x36, 0xc3, 0xae, 0x8a, 0x33, 0xfc, 0xaa, 0x43, 0xa7, 0xd0, 0x4d, 0x71, 0xcb,
+	0x93, 0x78, 0xd2, 0x32, 0x99, 0x66, 0x45, 0xff, 0xf0, 0x00, 0x4c, 0x97, 0x7e, 0x40, 0xc9, 0xc8,
+	0x39, 0xf4, 0x37, 0x3c, 0xde, 0x62, 0x2a, 0x52, 0x1e, 0x17, 0xac, 0x2e, 0xa4, 0xa8, 0x99, 0x10,
+	0x9a, 0xba, 0x1d, 0xaa, 0x4f, 0x32, 0x85, 0x5e, 0xc4, 0x33, 0xb6, 0xda, 0x63, 0xa4, 0xc9, 0x7b,
+	0x61, 0xb9, 0x26, 0x4f, 0x00, 0xe2, 0x44, 0x2e, 0x57, 0xb8, 0x49, 0x52, 0x9c, 0xb4, 0x35, 0x5d,
+	0x10, 0x27, 0x72, 0xa1, 0x01, 0x13, 0x66, 0x72, 0xc9, 0x36, 0x12, 0xd3, 0x49, 0xa7, 0x08, 0x33,
+	0x39, 0x57, 0x00, 0x5d, 0x40, 0xd7, 0x68, 0x23, 0x1f, 0x43, 0xfb, 0x1e, 0x25, 0xb3, 0x2e, 0x24,
+	0xf5, 0xfb, 0x55, 0xca, 0x43, 0x1d, 0x77, 0x0b, 0x1f, 0xe8, 0xc2, 0xe9, 0x0b, 0x18, 0x37, 0x5d,
+	0xf0, 0x5f, 0xd9, 0xe8, 0x57, 0x70, 0x62, 0x31, 0x16, 0xb3, 0x2d, 0xa6, 0xdf, 0x24, 0xf1, 0x86,
+	0x6f, 0xc9, 0x27, 0xd0, 0x8d, 0x56, 0xcb, 0x7d, 0xb2, 0xb6, 0x04, 0xe3, 0x82, 0xa0, 0x78, 0x32,
+	0x61, 0x27, 0x5a, 0xdd, 0x26, 0x6b, 0xba, 0x86, 0xce, 0x2d, 0x8f, 0x77, 0x19, 0x79, 0x0f, 0x02,
+	0xe5, 0x1e, 0xae, 0x24, 0xd8, 0xa6, 0x2a, 0x3b, 0x19, 0x6b, 0x39, 0x1d, 0x0d, 0x4c, 0x47, 0x6d,
+	0x15, 0xad, 0xea, 0xfa, 0xce, 0xa0, 0xb7, 0xc3, 0x7c, 0xa9, 0x55, 0x9b, 0x2e, 0x1e, 0xed, 0x8c,
+	0x54, 0xfa, 0x12, 0x86, 0xf3, 0x28, 0xd2, 0x16, 0xfb, 0xf9, 0x80, 0x59, 0x79, 0x43, 0x5e, 0x75,
+	0x43, 0xb4, 0xf6, 0xd0, 0x46, 0xf5, 0x7a, 0xcd, 0x0b, 0xa3, 0x63, 0x18, 0x15, 0x34, 0x99, 0x48,
+	0xe2, 0x0c, 0xe9, 0x87, 0x30, 0x0e, 0xf1, 0x3e, 0x79, 0xc0, 0xb7, 0x71, 0xd3, 0x13, 0x38, 0x76,
+	0xb2, 0xec, 0xd6, 0x0f, 0x60, 0xf8, 0x3d, 0xca, 0xb7, 0xee, 0x3b, 0x86, 0x77, 0x6e, 0x79, 0xa6,
+	0x72, 0x32, 0x9b, 0x64, 0x2b, 0x51, 0x92, 0xfe, 0x87, 0x4a, 0x34, 0x8d, 0x95, 0x73, 0x5d, 0x54,
+	0xf2, 0x2f, 0xdc, 0x03, 0xc7, 0xe8, 0xe6, 0x8c, 0x20, 0xac, 0x61, 0x55, 0xb5, 0x2e, 0xfd, 0xef,
+	0x1e, 0xf4, 0xef, 0xf8, 0x36, 0xfe, 0x67, 0xea, 0x8f, 0x60, 0xa4, 0xe6, 0x2b, 0xae, 0x25, 0x46,
+	0xcb, 0x88, 0x49, 0x66, 0x1d, 0x3a, 0x2c, 0xd1, 0x6f, 0x99, 0x64, 0xe4, 0x7d, 0x08, 0xd8, 0x7e,
+	0x9b, 0xa4, 0x5c, 0xfe, 0x74, 0x6f, 0x6f, 0xbf, 0x02, 0x08, 0xad, 0xbf, 0xcd, 0xb6, 0x1d, 0xb7,
+	0x2e, 0xb8, 0x18, 0xc1, 0x40, 0xf9, 0x24, 0xc3, 0x3d, 0xae, 0x65, 0x92, 0xd2, 0x1c, 0x40, 0x29,
+	0xab, 0xf8, 0x33, 0xbe, 0x8d, 0x99, 0x3c, 0xa4, 0xa8, 0xe5, 0x0d, 0xc2, 0x0a, 0xa8, 0x9f, 0xee,
+	0x37, 0x4f, 0x7f, 0x06, 0x27, 0x2a, 0x95, 0xc7, 0xdb, 0xa5, 0xab, 0xc2, 0xa8, 0x24, 0x36, 0xf4,
+	0x5d, 0x15, 0x99, 0xfd, 0xe9, 0xc3, 0x71, 0xf5, 0x74, 0xee, 0x30, 0x7d, 0xe0, 0x6b, 0x24, 0x5f,
+	0x42, 0xd7, 0xd8, 0x8c, 0x54, 0x63, 0xce, 0x75, 0xef, 0xf4, 0xb4, 0x09, 0x9b, 0x26, 0x93, 0xaf,
+	0x21, 0x28, 0x7d, 0x46, 0xca, 0x01, 0xdf, 0x34, 0xe8, 0xf4, 0xec, 0x0d, 0x11, 0xcb, 0xf0, 0x39,
+	0x74, 0x8d, 0x29, 0xab, 0xa3, 0x6b, 0x26, 0x9d, 0xf6, 0x1d, 0x3b, 0x91, 0x2f, 0xe0, 0xc8, 0xf8,
+	0x33, 0x23, 0xef, 0x96, 0xef, 0xbb, 0x6e, 0xd8, 0xe9, 0xb8, 0x39, 0xa9, 0x6d, 0x79, 0x6a, 0x62,
+	0xb9, 0xe5, 0x55, 0xb6, 0xab, 0x95, 0xe7, 0x78, 0xa8, 0x2a, 0x4f, 0xed, 0x6d, 0x94, 0xe7, 0x6c,
+	0x3f, 0x7b, 0x43, 0xc4, 0x30, 0xcc, 0xe6, 0x30, 0xba, 0x33, 0xb7, 0x50, 0xf4, 0xfa, 0x19, 0xb4,
+	0x15, 0x42, 0x4e, 0xca, 0x1f, 0xed, 0xca, 0xa4, 0x53, 0xe2, 0x82, 0xc6, 0x1f, 0x0b, 0xf8, 0xb1,
+	0x67, 0x40, 0xb1, 0x5a, 0x75, 0xf5, 0x1f, 0x82, 0xab, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0x3f,
+	0xce, 0x10, 0xf1, 0x20, 0x08, 0x00, 0x00,
 }

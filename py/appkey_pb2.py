@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='appkey.proto',
   package='appkey',
   syntax='proto3',
-  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\"B\n\x08Location\x12\x1b\n\x02s3\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\r\n\x03url\x18\x02 \x01(\tH\x00\x42\n\n\x08location\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"7\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"4\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\"7\n\x13\x41ppKeyManagerConfig\x12 \n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32\x10.appkey.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\"r\n\x11\x41ppKeySignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"U\n\x10\x41ppKeySignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\tB\nZ\x08\x61ppkeypbb\x06proto3')
+  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\"B\n\x08Location\x12\x1b\n\x02s3\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\r\n\x03url\x18\x02 \x01(\tH\x00\x42\n\n\x08location\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"7\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"4\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\"7\n\x13\x41ppKeyManagerConfig\x12 \n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32\x10.appkey.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\":\n\rAddAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64\x41ppResponse\"\x1f\n\x10RemoveAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x13\n\x11RemoveAppResponse\"\x1c\n\rGetAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x11\n\x0fListAppsRequest\":\n\rAddKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64KeyResponse\"5\n\x10RemoveKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x14\n\x0c\x66ingerprints\x18\x02 \x03(\t\"\x13\n\x11RemoveKeyResponse\"l\n\x0bSignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"O\n\nSignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\t2\xed\x02\n\x11KeyManagerService\x12\x37\n\x06\x41\x64\x64\x41pp\x12\x15.appkey.AddAppRequest\x1a\x16.appkey.AddAppResponse\x12@\n\tRemoveApp\x12\x18.appkey.RemoveAppRequest\x1a\x19.appkey.RemoveAppResponse\x12,\n\x06GetApp\x12\x15.appkey.GetAppRequest\x1a\x0b.appkey.App\x12\x34\n\x07ListAps\x12\x17.appkey.ListAppsRequest\x1a\x10.appkey.AppIndex\x12\x37\n\x06\x41\x64\x64Key\x12\x15.appkey.AddKeyRequest\x1a\x16.appkey.AddKeyResponse\x12@\n\tRemoveKey\x12\x18.appkey.RemoveKeyRequest\x1a\x19.appkey.RemoveKeyResponse2A\n\x0eSigningService\x12/\n\x04Sign\x12\x13.appkey.SignRequest\x1a\x12.appkey.SignedDataB\nZ\x08\x61ppkeypbb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -497,36 +497,332 @@ _LINKS = _descriptor.Descriptor(
 )
 
 
-_APPKEYSIGNREQUEST = _descriptor.Descriptor(
-  name='AppKeySignRequest',
-  full_name='appkey.AppKeySignRequest',
+_ADDAPPREQUEST = _descriptor.Descriptor(
+  name='AddAppRequest',
+  full_name='appkey.AddAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.AppKeySignRequest.app', index=0,
+      name='app', full_name='appkey.AddAppRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='protected_data', full_name='appkey.AppKeySignRequest.protected_data', index=1,
+      name='keys', full_name='appkey.AddAppRequest.keys', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=781,
+  serialized_end=839,
+)
+
+
+_ADDAPPRESPONSE = _descriptor.Descriptor(
+  name='AddAppResponse',
+  full_name='appkey.AddAppResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=841,
+  serialized_end=857,
+)
+
+
+_REMOVEAPPREQUEST = _descriptor.Descriptor(
+  name='RemoveAppRequest',
+  full_name='appkey.RemoveAppRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.RemoveAppRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=859,
+  serialized_end=890,
+)
+
+
+_REMOVEAPPRESPONSE = _descriptor.Descriptor(
+  name='RemoveAppResponse',
+  full_name='appkey.RemoveAppResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=892,
+  serialized_end=911,
+)
+
+
+_GETAPPREQUEST = _descriptor.Descriptor(
+  name='GetAppRequest',
+  full_name='appkey.GetAppRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.GetAppRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=913,
+  serialized_end=941,
+)
+
+
+_LISTAPPSREQUEST = _descriptor.Descriptor(
+  name='ListAppsRequest',
+  full_name='appkey.ListAppsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=943,
+  serialized_end=960,
+)
+
+
+_ADDKEYREQUEST = _descriptor.Descriptor(
+  name='AddKeyRequest',
+  full_name='appkey.AddKeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.AddKeyRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='keys', full_name='appkey.AddKeyRequest.keys', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=962,
+  serialized_end=1020,
+)
+
+
+_ADDKEYRESPONSE = _descriptor.Descriptor(
+  name='AddKeyResponse',
+  full_name='appkey.AddKeyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1022,
+  serialized_end=1038,
+)
+
+
+_REMOVEKEYREQUEST = _descriptor.Descriptor(
+  name='RemoveKeyRequest',
+  full_name='appkey.RemoveKeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.RemoveKeyRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='fingerprints', full_name='appkey.RemoveKeyRequest.fingerprints', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1040,
+  serialized_end=1093,
+)
+
+
+_REMOVEKEYRESPONSE = _descriptor.Descriptor(
+  name='RemoveKeyResponse',
+  full_name='appkey.RemoveKeyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1095,
+  serialized_end=1114,
+)
+
+
+_SIGNREQUEST = _descriptor.Descriptor(
+  name='SignRequest',
+  full_name='appkey.SignRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.SignRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='protected_data', full_name='appkey.SignRequest.protected_data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='algorithm', full_name='appkey.AppKeySignRequest.algorithm', index=2,
+      name='algorithm', full_name='appkey.SignRequest.algorithm', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='fingerprint', full_name='appkey.AppKeySignRequest.fingerprint', index=3,
+      name='fingerprint', full_name='appkey.SignRequest.fingerprint', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -544,37 +840,37 @@ _APPKEYSIGNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='key_selector', full_name='appkey.AppKeySignRequest.key_selector',
+      name='key_selector', full_name='appkey.SignRequest.key_selector',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=781,
-  serialized_end=895,
+  serialized_start=1116,
+  serialized_end=1224,
 )
 
 
-_APPKEYSIGNEDDATA = _descriptor.Descriptor(
-  name='AppKeySignedData',
-  full_name='appkey.AppKeySignedData',
+_SIGNEDDATA = _descriptor.Descriptor(
+  name='SignedData',
+  full_name='appkey.SignedData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='signature', full_name='appkey.AppKeySignedData.signature', index=0,
+      name='signature', full_name='appkey.SignedData.signature', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='algorithm', full_name='appkey.AppKeySignedData.algorithm', index=1,
+      name='algorithm', full_name='appkey.SignedData.algorithm', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='signing_fingerprint', full_name='appkey.AppKeySignedData.signing_fingerprint', index=2,
+      name='signing_fingerprint', full_name='appkey.SignedData.signing_fingerprint', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -592,8 +888,8 @@ _APPKEYSIGNEDDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=897,
-  serialized_end=982,
+  serialized_start=1226,
+  serialized_end=1305,
 )
 
 _LOCATION.fields_by_name['s3'].message_type = _S3REF
@@ -612,9 +908,11 @@ _APPINDEX.fields_by_name['app_refs'].message_type = _APPINDEX_APPREFSENTRY
 _APPKEY.fields_by_name['meta'].message_type = _APPKEYMETA
 _APPKEYINDEXENTRY.fields_by_name['meta'].message_type = _APPKEYMETA
 _APPKEYMANAGERCONFIG.fields_by_name['db_loc'].message_type = _LOCATION
-_APPKEYSIGNREQUEST.oneofs_by_name['key_selector'].fields.append(
-  _APPKEYSIGNREQUEST.fields_by_name['fingerprint'])
-_APPKEYSIGNREQUEST.fields_by_name['fingerprint'].containing_oneof = _APPKEYSIGNREQUEST.oneofs_by_name['key_selector']
+_ADDAPPREQUEST.fields_by_name['keys'].message_type = _APPKEY
+_ADDKEYREQUEST.fields_by_name['keys'].message_type = _APPKEY
+_SIGNREQUEST.oneofs_by_name['key_selector'].fields.append(
+  _SIGNREQUEST.fields_by_name['fingerprint'])
+_SIGNREQUEST.fields_by_name['fingerprint'].containing_oneof = _SIGNREQUEST.oneofs_by_name['key_selector']
 DESCRIPTOR.message_types_by_name['Location'] = _LOCATION
 DESCRIPTOR.message_types_by_name['App'] = _APP
 DESCRIPTOR.message_types_by_name['AppIndexEntry'] = _APPINDEXENTRY
@@ -625,8 +923,18 @@ DESCRIPTOR.message_types_by_name['AppKey'] = _APPKEY
 DESCRIPTOR.message_types_by_name['AppKeyIndexEntry'] = _APPKEYINDEXENTRY
 DESCRIPTOR.message_types_by_name['AppKeyManagerConfig'] = _APPKEYMANAGERCONFIG
 DESCRIPTOR.message_types_by_name['Links'] = _LINKS
-DESCRIPTOR.message_types_by_name['AppKeySignRequest'] = _APPKEYSIGNREQUEST
-DESCRIPTOR.message_types_by_name['AppKeySignedData'] = _APPKEYSIGNEDDATA
+DESCRIPTOR.message_types_by_name['AddAppRequest'] = _ADDAPPREQUEST
+DESCRIPTOR.message_types_by_name['AddAppResponse'] = _ADDAPPRESPONSE
+DESCRIPTOR.message_types_by_name['RemoveAppRequest'] = _REMOVEAPPREQUEST
+DESCRIPTOR.message_types_by_name['RemoveAppResponse'] = _REMOVEAPPRESPONSE
+DESCRIPTOR.message_types_by_name['GetAppRequest'] = _GETAPPREQUEST
+DESCRIPTOR.message_types_by_name['ListAppsRequest'] = _LISTAPPSREQUEST
+DESCRIPTOR.message_types_by_name['AddKeyRequest'] = _ADDKEYREQUEST
+DESCRIPTOR.message_types_by_name['AddKeyResponse'] = _ADDKEYRESPONSE
+DESCRIPTOR.message_types_by_name['RemoveKeyRequest'] = _REMOVEKEYREQUEST
+DESCRIPTOR.message_types_by_name['RemoveKeyResponse'] = _REMOVEKEYRESPONSE
+DESCRIPTOR.message_types_by_name['SignRequest'] = _SIGNREQUEST
+DESCRIPTOR.message_types_by_name['SignedData'] = _SIGNEDDATA
 
 Location = _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), dict(
   DESCRIPTOR = _LOCATION,
@@ -714,19 +1022,89 @@ Links = _reflection.GeneratedProtocolMessageType('Links', (_message.Message,), d
   ))
 _sym_db.RegisterMessage(Links)
 
-AppKeySignRequest = _reflection.GeneratedProtocolMessageType('AppKeySignRequest', (_message.Message,), dict(
-  DESCRIPTOR = _APPKEYSIGNREQUEST,
+AddAppRequest = _reflection.GeneratedProtocolMessageType('AddAppRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDAPPREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKeySignRequest)
+  # @@protoc_insertion_point(class_scope:appkey.AddAppRequest)
   ))
-_sym_db.RegisterMessage(AppKeySignRequest)
+_sym_db.RegisterMessage(AddAppRequest)
 
-AppKeySignedData = _reflection.GeneratedProtocolMessageType('AppKeySignedData', (_message.Message,), dict(
-  DESCRIPTOR = _APPKEYSIGNEDDATA,
+AddAppResponse = _reflection.GeneratedProtocolMessageType('AddAppResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ADDAPPRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKeySignedData)
+  # @@protoc_insertion_point(class_scope:appkey.AddAppResponse)
   ))
-_sym_db.RegisterMessage(AppKeySignedData)
+_sym_db.RegisterMessage(AddAppResponse)
+
+RemoveAppRequest = _reflection.GeneratedProtocolMessageType('RemoveAppRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVEAPPREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.RemoveAppRequest)
+  ))
+_sym_db.RegisterMessage(RemoveAppRequest)
+
+RemoveAppResponse = _reflection.GeneratedProtocolMessageType('RemoveAppResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVEAPPRESPONSE,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.RemoveAppResponse)
+  ))
+_sym_db.RegisterMessage(RemoveAppResponse)
+
+GetAppRequest = _reflection.GeneratedProtocolMessageType('GetAppRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETAPPREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.GetAppRequest)
+  ))
+_sym_db.RegisterMessage(GetAppRequest)
+
+ListAppsRequest = _reflection.GeneratedProtocolMessageType('ListAppsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTAPPSREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.ListAppsRequest)
+  ))
+_sym_db.RegisterMessage(ListAppsRequest)
+
+AddKeyRequest = _reflection.GeneratedProtocolMessageType('AddKeyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDKEYREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.AddKeyRequest)
+  ))
+_sym_db.RegisterMessage(AddKeyRequest)
+
+AddKeyResponse = _reflection.GeneratedProtocolMessageType('AddKeyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ADDKEYRESPONSE,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.AddKeyResponse)
+  ))
+_sym_db.RegisterMessage(AddKeyResponse)
+
+RemoveKeyRequest = _reflection.GeneratedProtocolMessageType('RemoveKeyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVEKEYREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.RemoveKeyRequest)
+  ))
+_sym_db.RegisterMessage(RemoveKeyRequest)
+
+RemoveKeyResponse = _reflection.GeneratedProtocolMessageType('RemoveKeyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REMOVEKEYRESPONSE,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.RemoveKeyResponse)
+  ))
+_sym_db.RegisterMessage(RemoveKeyResponse)
+
+SignRequest = _reflection.GeneratedProtocolMessageType('SignRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.SignRequest)
+  ))
+_sym_db.RegisterMessage(SignRequest)
+
+SignedData = _reflection.GeneratedProtocolMessageType('SignedData', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNEDDATA,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.SignedData)
+  ))
+_sym_db.RegisterMessage(SignedData)
 
 
 DESCRIPTOR.has_options = True

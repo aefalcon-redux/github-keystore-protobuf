@@ -1,6 +1,6 @@
 {
   "appIndex": "index.pbf",
-  "app": "app/{AppId}",
-  "key": "app/{AppId}/{Fingerprint}.bin",
-  "keyMeta": "app/{AppId}/{Fingerprint}-meta.pbf"
+  "app": "app/{AppId}.pbf",
+  "key": "key/{AppId}/{Fingerprint}.bin",
+  "keyMeta": "key/{AppId}/{Fingerprint}-meta.pbf"
 }
