@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='appkey.proto',
   package='appkey',
   syntax='proto3',
-  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\"B\n\x08Location\x12\x1b\n\x02s3\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\r\n\x03url\x18\x02 \x01(\tH\x00\x42\n\n\x08location\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"7\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"4\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\"7\n\x13\x41ppKeyManagerConfig\x12 \n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32\x10.appkey.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\":\n\rAddAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64\x41ppResponse\"\x1f\n\x10RemoveAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x13\n\x11RemoveAppResponse\"\x1c\n\rGetAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x11\n\x0fListAppsRequest\":\n\rAddKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64KeyResponse\"5\n\x10RemoveKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x14\n\x0c\x66ingerprints\x18\x02 \x03(\t\"\x13\n\x11RemoveKeyResponse\"l\n\x0bSignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"O\n\nSignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\t2\xed\x02\n\x11KeyManagerService\x12\x37\n\x06\x41\x64\x64\x41pp\x12\x15.appkey.AddAppRequest\x1a\x16.appkey.AddAppResponse\x12@\n\tRemoveApp\x12\x18.appkey.RemoveAppRequest\x1a\x19.appkey.RemoveAppResponse\x12,\n\x06GetApp\x12\x15.appkey.GetAppRequest\x1a\x0b.appkey.App\x12\x34\n\x07ListAps\x12\x17.appkey.ListAppsRequest\x1a\x10.appkey.AppIndex\x12\x37\n\x06\x41\x64\x64Key\x12\x15.appkey.AddKeyRequest\x1a\x16.appkey.AddKeyResponse\x12@\n\tRemoveKey\x12\x18.appkey.RemoveKeyRequest\x1a\x19.appkey.RemoveKeyResponse2A\n\x0eSigningService\x12/\n\x04Sign\x12\x13.appkey.SignRequest\x1a\x12.appkey.SignedDataB\nZ\x08\x61ppkeypbb\x06proto3')
-)
+  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\x1a\x1cgoogle/protobuf/struct.proto\"B\n\x08Location\x12\x1b\n\x02s3\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\r\n\x03url\x18\x02 \x01(\tH\x00\x42\n\n\x08location\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"7\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"4\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\"7\n\x13\x41ppKeyManagerConfig\x12 \n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32\x10.appkey.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\":\n\rAddAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64\x41ppResponse\"\x1f\n\x10RemoveAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x13\n\x11RemoveAppResponse\"\x1c\n\rGetAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x11\n\x0fListAppsRequest\":\n\rAddKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64KeyResponse\"5\n\x10RemoveKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x14\n\x0c\x66ingerprints\x18\x02 \x03(\t\"\x13\n\x11RemoveKeyResponse\"l\n\x0bSignRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x16\n\x0eprotected_data\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t\x12\x15\n\x0b\x66ingerprint\x18\x04 \x01(\tH\x00\x42\x0e\n\x0ckey_selector\"O\n\nSignedData\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\talgorithm\x18\x02 \x01(\t\x12\x1b\n\x13signing_fingerprint\x18\x03 \x01(\t\"Y\n\x0eSignJwtRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\'\n\x06\x63laims\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x11\n\talgorithm\x18\x03 \x01(\t\"A\n\x0fSignJwtResponse\x12\x0e\n\x06\x63laims\x18\x01 \x01(\x0c\x12\x0b\n\x03sig\x18\x02 \x01(\x0c\x12\x11\n\talgorithm\x18\x03 \x01(\t2\xed\x02\n\x11KeyManagerService\x12\x37\n\x06\x41\x64\x64\x41pp\x12\x15.appkey.AddAppRequest\x1a\x16.appkey.AddAppResponse\x12@\n\tRemoveApp\x12\x18.appkey.RemoveAppRequest\x1a\x19.appkey.RemoveAppResponse\x12,\n\x06GetApp\x12\x15.appkey.GetAppRequest\x1a\x0b.appkey.App\x12\x34\n\x07ListAps\x12\x17.appkey.ListAppsRequest\x1a\x10.appkey.AppIndex\x12\x37\n\x06\x41\x64\x64Key\x12\x15.appkey.AddKeyRequest\x1a\x16.appkey.AddKeyResponse\x12@\n\tRemoveKey\x12\x18.appkey.RemoveKeyRequest\x1a\x19.appkey.RemoveKeyResponse2}\n\x0eSigningService\x12/\n\x04Sign\x12\x13.appkey.SignRequest\x1a\x12.appkey.SignedData\x12:\n\x07SignJwt\x12\x16.appkey.SignJwtRequest\x1a\x17.appkey.SignJwtResponseB\nZ\x08\x61ppkeypbb\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -62,8 +64,8 @@ _LOCATION = _descriptor.Descriptor(
       name='location', full_name='appkey.Location.location',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=24,
-  serialized_end=90,
+  serialized_start=54,
+  serialized_end=120,
 )
 
 
@@ -100,8 +102,8 @@ _APP_KEYSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=148,
-  serialized_end=217,
+  serialized_start=178,
+  serialized_end=247,
 )
 
 _APP = _descriptor.Descriptor(
@@ -137,8 +139,8 @@ _APP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=92,
-  serialized_end=217,
+  serialized_start=122,
+  serialized_end=247,
 )
 
 
@@ -168,8 +170,8 @@ _APPINDEXENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=246,
+  serialized_start=249,
+  serialized_end=276,
 )
 
 
@@ -206,8 +208,8 @@ _APPINDEX_APPREFSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=310,
-  serialized_end=379,
+  serialized_start=340,
+  serialized_end=409,
 )
 
 _APPINDEX = _descriptor.Descriptor(
@@ -236,8 +238,8 @@ _APPINDEX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=249,
-  serialized_end=379,
+  serialized_start=279,
+  serialized_end=409,
 )
 
 
@@ -281,8 +283,8 @@ _S3REF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=381,
-  serialized_end=433,
+  serialized_start=411,
+  serialized_end=463,
 )
 
 
@@ -340,8 +342,8 @@ _APPKEYMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=435,
-  serialized_end=539,
+  serialized_start=465,
+  serialized_end=569,
 )
 
 
@@ -378,8 +380,8 @@ _APPKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=596,
+  serialized_start=571,
+  serialized_end=626,
 )
 
 
@@ -409,8 +411,8 @@ _APPKEYINDEXENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=598,
-  serialized_end=650,
+  serialized_start=628,
+  serialized_end=680,
 )
 
 
@@ -440,8 +442,8 @@ _APPKEYMANAGERCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=652,
-  serialized_end=707,
+  serialized_start=682,
+  serialized_end=737,
 )
 
 
@@ -492,8 +494,8 @@ _LINKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=709,
-  serialized_end=779,
+  serialized_start=739,
+  serialized_end=809,
 )
 
 
@@ -530,8 +532,8 @@ _ADDAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=781,
-  serialized_end=839,
+  serialized_start=811,
+  serialized_end=869,
 )
 
 
@@ -554,8 +556,8 @@ _ADDAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=841,
-  serialized_end=857,
+  serialized_start=871,
+  serialized_end=887,
 )
 
 
@@ -585,8 +587,8 @@ _REMOVEAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=859,
-  serialized_end=890,
+  serialized_start=889,
+  serialized_end=920,
 )
 
 
@@ -609,8 +611,8 @@ _REMOVEAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=892,
-  serialized_end=911,
+  serialized_start=922,
+  serialized_end=941,
 )
 
 
@@ -640,8 +642,8 @@ _GETAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=913,
-  serialized_end=941,
+  serialized_start=943,
+  serialized_end=971,
 )
 
 
@@ -664,8 +666,8 @@ _LISTAPPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=943,
-  serialized_end=960,
+  serialized_start=973,
+  serialized_end=990,
 )
 
 
@@ -702,8 +704,8 @@ _ADDKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=962,
-  serialized_end=1020,
+  serialized_start=992,
+  serialized_end=1050,
 )
 
 
@@ -726,8 +728,8 @@ _ADDKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1038,
+  serialized_start=1052,
+  serialized_end=1068,
 )
 
 
@@ -764,8 +766,8 @@ _REMOVEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1040,
-  serialized_end=1093,
+  serialized_start=1070,
+  serialized_end=1123,
 )
 
 
@@ -788,8 +790,8 @@ _REMOVEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1095,
-  serialized_end=1114,
+  serialized_start=1125,
+  serialized_end=1144,
 )
 
 
@@ -843,8 +845,8 @@ _SIGNREQUEST = _descriptor.Descriptor(
       name='key_selector', full_name='appkey.SignRequest.key_selector',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1116,
-  serialized_end=1224,
+  serialized_start=1146,
+  serialized_end=1254,
 )
 
 
@@ -888,8 +890,98 @@ _SIGNEDDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1226,
-  serialized_end=1305,
+  serialized_start=1256,
+  serialized_end=1335,
+)
+
+
+_SIGNJWTREQUEST = _descriptor.Descriptor(
+  name='SignJwtRequest',
+  full_name='appkey.SignJwtRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='appkey.SignJwtRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='claims', full_name='appkey.SignJwtRequest.claims', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='algorithm', full_name='appkey.SignJwtRequest.algorithm', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1337,
+  serialized_end=1426,
+)
+
+
+_SIGNJWTRESPONSE = _descriptor.Descriptor(
+  name='SignJwtResponse',
+  full_name='appkey.SignJwtResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='claims', full_name='appkey.SignJwtResponse.claims', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sig', full_name='appkey.SignJwtResponse.sig', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='algorithm', full_name='appkey.SignJwtResponse.algorithm', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1428,
+  serialized_end=1493,
 )
 
 _LOCATION.fields_by_name['s3'].message_type = _S3REF
@@ -913,6 +1005,7 @@ _ADDKEYREQUEST.fields_by_name['keys'].message_type = _APPKEY
 _SIGNREQUEST.oneofs_by_name['key_selector'].fields.append(
   _SIGNREQUEST.fields_by_name['fingerprint'])
 _SIGNREQUEST.fields_by_name['fingerprint'].containing_oneof = _SIGNREQUEST.oneofs_by_name['key_selector']
+_SIGNJWTREQUEST.fields_by_name['claims'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 DESCRIPTOR.message_types_by_name['Location'] = _LOCATION
 DESCRIPTOR.message_types_by_name['App'] = _APP
 DESCRIPTOR.message_types_by_name['AppIndexEntry'] = _APPINDEXENTRY
@@ -935,6 +1028,8 @@ DESCRIPTOR.message_types_by_name['RemoveKeyRequest'] = _REMOVEKEYREQUEST
 DESCRIPTOR.message_types_by_name['RemoveKeyResponse'] = _REMOVEKEYRESPONSE
 DESCRIPTOR.message_types_by_name['SignRequest'] = _SIGNREQUEST
 DESCRIPTOR.message_types_by_name['SignedData'] = _SIGNEDDATA
+DESCRIPTOR.message_types_by_name['SignJwtRequest'] = _SIGNJWTREQUEST
+DESCRIPTOR.message_types_by_name['SignJwtResponse'] = _SIGNJWTRESPONSE
 
 Location = _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), dict(
   DESCRIPTOR = _LOCATION,
@@ -1105,6 +1200,20 @@ SignedData = _reflection.GeneratedProtocolMessageType('SignedData', (_message.Me
   # @@protoc_insertion_point(class_scope:appkey.SignedData)
   ))
 _sym_db.RegisterMessage(SignedData)
+
+SignJwtRequest = _reflection.GeneratedProtocolMessageType('SignJwtRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNJWTREQUEST,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.SignJwtRequest)
+  ))
+_sym_db.RegisterMessage(SignJwtRequest)
+
+SignJwtResponse = _reflection.GeneratedProtocolMessageType('SignJwtResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNJWTRESPONSE,
+  __module__ = 'appkey_pb2'
+  # @@protoc_insertion_point(class_scope:appkey.SignJwtResponse)
+  ))
+_sym_db.RegisterMessage(SignJwtResponse)
 
 
 DESCRIPTOR.has_options = True

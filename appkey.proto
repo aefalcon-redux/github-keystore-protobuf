@@ -1,6 +1,7 @@
 syntax = "proto3";
 package appkey;
 option go_package = "appkeypb";
+import "google/protobuf/struct.proto";
 
 //*************************
 //* Data storage messages *
@@ -122,6 +123,18 @@ message SignedData {
     string signing_fingerprint = 3;
 }
 
+message SignJwtRequest {
+    uint64 app = 1;
+    google.protobuf.Struct claims = 2;
+    string algorithm = 3;
+}
+
+message SignJwtResponse {
+    bytes claims = 1;
+    bytes sig = 2;
+    string algorithm = 3;
+}
+
 service KeyManagerService {
     rpc AddApp(AddAppRequest) returns (AddAppResponse);
     rpc RemoveApp(RemoveAppRequest) returns (RemoveAppResponse);
@@ -133,4 +146,5 @@ service KeyManagerService {
 
 service SigningService {
     rpc Sign(SignRequest) returns (SignedData);
+    rpc SignJwt(SignJwtRequest) returns (SignJwtResponse);
 }
