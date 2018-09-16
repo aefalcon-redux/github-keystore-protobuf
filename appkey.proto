@@ -130,9 +130,7 @@ message SignJwtRequest {
 }
 
 message SignJwtResponse {
-    bytes claims = 1;
-    bytes sig = 2;
-    string algorithm = 3;
+    string jwt = 1;
 }
 
 service KeyManagerService {
