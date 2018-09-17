@@ -143,6 +143,5 @@ service KeyManagerService {
 }
 
 service SigningService {
-    rpc Sign(SignRequest) returns (SignedData);
     rpc SignJwt(SignJwtRequest) returns (SignJwtResponse);
 }
