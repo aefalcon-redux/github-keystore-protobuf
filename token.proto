@@ -52,11 +52,28 @@ message PutInstallTokenRequest {
 message PutInstallTokenResponse {
 }
 
+message DeleteAppTokenRequest {
+    uint64 app = 1;
+}
+
+message DeleteAppTokenResponse{
+}
+
+message DeleteInstallTokenRequest {
+    uint64 app = 1;
+    uint64 install = 2;
+}
+
+message DeleteInstallTokenResponse{
+}
+
 service TokenStore {
     rpc GetAppToken(GetAppTokenRequest) returns (GetAppTokenResponse);
     rpc GetInstallToken(GetInstallTokenRequest) returns (GetInstallTokenResponse);
     rpc PutAppToken(PutAppTokenRequest) returns (PutAppTokenResponse);
     rpc PutInstallToken(PutInstallTokenRequest) returns (PutInstallTokenResponse);
+    rpc DeleteAppToken(DeleteAppTokenRequest) returns (DeleteAppTokenResponse);
+    rpc DeleteInstallToken(DeleteInstallTokenRequest) returns (DeleteInstallTokenResponse);
 }
 
 service InstallTokenService {

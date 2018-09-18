@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='token',
   syntax='proto3',
   serialized_options=_b('Z\007tokenpb'),
-  serialized_pb=_b('\n\x0btoken.proto\x12\x05token\x1a\x1fgoogle/protobuf/timestamp.proto\"3\n\x05Links\x12\x12\n\napp_tokens\x18\x01 \x01(\t\x12\x16\n\x0einstall_tokens\x18\x02 \x01(\t\"V\n\x08\x41ppToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\r\n\x05token\x18\x02 \x01(\x0c\x12.\n\nexpiration\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"k\n\x0cInstallToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\x12\r\n\x05token\x18\x03 \x01(\x0c\x12.\n\nexpiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x12GetAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"5\n\x13GetAppTokenResponse\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"6\n\x16GetInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"=\n\x17GetInstallTokenResponse\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"4\n\x12PutAppTokenRequest\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"\x15\n\x13PutAppTokenResponse\"<\n\x16PutInstallTokenRequest\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"\x19\n\x17PutInstallTokenResponse2\xbc\x02\n\nTokenStore\x12\x44\n\x0bGetAppToken\x12\x19.token.GetAppTokenRequest\x1a\x1a.token.GetAppTokenResponse\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponse\x12\x44\n\x0bPutAppToken\x12\x19.token.PutAppTokenRequest\x1a\x1a.token.PutAppTokenResponse\x12P\n\x0fPutInstallToken\x12\x1d.token.PutInstallTokenRequest\x1a\x1e.token.PutInstallTokenResponse2g\n\x13InstallTokenService\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponseB\tZ\x07tokenpbb\x06proto3')
+  serialized_pb=_b('\n\x0btoken.proto\x12\x05token\x1a\x1fgoogle/protobuf/timestamp.proto\"3\n\x05Links\x12\x12\n\napp_tokens\x18\x01 \x01(\t\x12\x16\n\x0einstall_tokens\x18\x02 \x01(\t\"V\n\x08\x41ppToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\r\n\x05token\x18\x02 \x01(\x0c\x12.\n\nexpiration\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"k\n\x0cInstallToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\x12\r\n\x05token\x18\x03 \x01(\x0c\x12.\n\nexpiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x12GetAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"5\n\x13GetAppTokenResponse\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"6\n\x16GetInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"=\n\x17GetInstallTokenResponse\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"4\n\x12PutAppTokenRequest\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"\x15\n\x13PutAppTokenResponse\"<\n\x16PutInstallTokenRequest\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"\x19\n\x17PutInstallTokenResponse\"$\n\x15\x44\x65leteAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x18\n\x16\x44\x65leteAppTokenResponse\"9\n\x19\x44\x65leteInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"\x1c\n\x1a\x44\x65leteInstallTokenResponse2\xe6\x03\n\nTokenStore\x12\x44\n\x0bGetAppToken\x12\x19.token.GetAppTokenRequest\x1a\x1a.token.GetAppTokenResponse\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponse\x12\x44\n\x0bPutAppToken\x12\x19.token.PutAppTokenRequest\x1a\x1a.token.PutAppTokenResponse\x12P\n\x0fPutInstallToken\x12\x1d.token.PutInstallTokenRequest\x1a\x1e.token.PutInstallTokenResponse\x12M\n\x0e\x44\x65leteAppToken\x12\x1c.token.DeleteAppTokenRequest\x1a\x1d.token.DeleteAppTokenResponse\x12Y\n\x12\x44\x65leteInstallToken\x12 .token.DeleteInstallTokenRequest\x1a!.token.DeleteInstallTokenResponse2g\n\x13InstallTokenService\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponseB\tZ\x07tokenpbb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -402,6 +402,123 @@ _PUTINSTALLTOKENRESPONSE = _descriptor.Descriptor(
   serialized_end=678,
 )
 
+
+_DELETEAPPTOKENREQUEST = _descriptor.Descriptor(
+  name='DeleteAppTokenRequest',
+  full_name='token.DeleteAppTokenRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='token.DeleteAppTokenRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=680,
+  serialized_end=716,
+)
+
+
+_DELETEAPPTOKENRESPONSE = _descriptor.Descriptor(
+  name='DeleteAppTokenResponse',
+  full_name='token.DeleteAppTokenResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=718,
+  serialized_end=742,
+)
+
+
+_DELETEINSTALLTOKENREQUEST = _descriptor.Descriptor(
+  name='DeleteInstallTokenRequest',
+  full_name='token.DeleteInstallTokenRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='app', full_name='token.DeleteInstallTokenRequest.app', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='install', full_name='token.DeleteInstallTokenRequest.install', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=744,
+  serialized_end=801,
+)
+
+
+_DELETEINSTALLTOKENRESPONSE = _descriptor.Descriptor(
+  name='DeleteInstallTokenResponse',
+  full_name='token.DeleteInstallTokenResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=803,
+  serialized_end=831,
+)
+
 _APPTOKEN.fields_by_name['expiration'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _INSTALLTOKEN.fields_by_name['expiration'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _GETAPPTOKENRESPONSE.fields_by_name['token'].message_type = _APPTOKEN
@@ -419,6 +536,10 @@ DESCRIPTOR.message_types_by_name['PutAppTokenRequest'] = _PUTAPPTOKENREQUEST
 DESCRIPTOR.message_types_by_name['PutAppTokenResponse'] = _PUTAPPTOKENRESPONSE
 DESCRIPTOR.message_types_by_name['PutInstallTokenRequest'] = _PUTINSTALLTOKENREQUEST
 DESCRIPTOR.message_types_by_name['PutInstallTokenResponse'] = _PUTINSTALLTOKENRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteAppTokenRequest'] = _DELETEAPPTOKENREQUEST
+DESCRIPTOR.message_types_by_name['DeleteAppTokenResponse'] = _DELETEAPPTOKENRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteInstallTokenRequest'] = _DELETEINSTALLTOKENREQUEST
+DESCRIPTOR.message_types_by_name['DeleteInstallTokenResponse'] = _DELETEINSTALLTOKENRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Links = _reflection.GeneratedProtocolMessageType('Links', (_message.Message,), dict(
@@ -498,6 +619,34 @@ PutInstallTokenResponse = _reflection.GeneratedProtocolMessageType('PutInstallTo
   ))
 _sym_db.RegisterMessage(PutInstallTokenResponse)
 
+DeleteAppTokenRequest = _reflection.GeneratedProtocolMessageType('DeleteAppTokenRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEAPPTOKENREQUEST,
+  __module__ = 'token_pb2'
+  # @@protoc_insertion_point(class_scope:token.DeleteAppTokenRequest)
+  ))
+_sym_db.RegisterMessage(DeleteAppTokenRequest)
+
+DeleteAppTokenResponse = _reflection.GeneratedProtocolMessageType('DeleteAppTokenResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEAPPTOKENRESPONSE,
+  __module__ = 'token_pb2'
+  # @@protoc_insertion_point(class_scope:token.DeleteAppTokenResponse)
+  ))
+_sym_db.RegisterMessage(DeleteAppTokenResponse)
+
+DeleteInstallTokenRequest = _reflection.GeneratedProtocolMessageType('DeleteInstallTokenRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEINSTALLTOKENREQUEST,
+  __module__ = 'token_pb2'
+  # @@protoc_insertion_point(class_scope:token.DeleteInstallTokenRequest)
+  ))
+_sym_db.RegisterMessage(DeleteInstallTokenRequest)
+
+DeleteInstallTokenResponse = _reflection.GeneratedProtocolMessageType('DeleteInstallTokenResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEINSTALLTOKENRESPONSE,
+  __module__ = 'token_pb2'
+  # @@protoc_insertion_point(class_scope:token.DeleteInstallTokenResponse)
+  ))
+_sym_db.RegisterMessage(DeleteInstallTokenResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -507,8 +656,8 @@ _TOKENSTORE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=681,
-  serialized_end=997,
+  serialized_start=834,
+  serialized_end=1320,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAppToken',
@@ -546,6 +695,24 @@ _TOKENSTORE = _descriptor.ServiceDescriptor(
     output_type=_PUTINSTALLTOKENRESPONSE,
     serialized_options=None,
   ),
+  _descriptor.MethodDescriptor(
+    name='DeleteAppToken',
+    full_name='token.TokenStore.DeleteAppToken',
+    index=4,
+    containing_service=None,
+    input_type=_DELETEAPPTOKENREQUEST,
+    output_type=_DELETEAPPTOKENRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteInstallToken',
+    full_name='token.TokenStore.DeleteInstallToken',
+    index=5,
+    containing_service=None,
+    input_type=_DELETEINSTALLTOKENREQUEST,
+    output_type=_DELETEINSTALLTOKENRESPONSE,
+    serialized_options=None,
+  ),
 ])
 _sym_db.RegisterServiceDescriptor(_TOKENSTORE)
 
@@ -558,8 +725,8 @@ _INSTALLTOKENSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=999,
-  serialized_end=1102,
+  serialized_start=1322,
+  serialized_end=1425,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetInstallToken',
