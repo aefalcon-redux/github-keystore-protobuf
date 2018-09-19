@@ -1,0 +1,4 @@
+{
+  "appTokens": "app/{AppId}/token.pbf",
+  "installTokens": "install/{AppId}/{InstallId}/token.pbf"
+}

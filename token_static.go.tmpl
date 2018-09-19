@@ -1,0 +1,15 @@
+package tokenpb
+
+import (
+	"github.com/golang/protobuf/proto"
+)
+
+var DefaultLinks Links
+var DefaultLinksPb = []byte{{default_token_links_pb | go_bytes}}
+
+func init() {
+	err := proto.Unmarshal(DefaultLinksPb, &DefaultLinks)
+	if err != nil {
+		panic(err.Error())
+	}
+}

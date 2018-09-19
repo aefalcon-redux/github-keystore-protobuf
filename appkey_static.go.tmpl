@@ -5,11 +5,11 @@ import (
 )
 
 var DefaultLinks Links
-var DefaultLinksPb = []byte{default_links_pb}
+var DefaultLinksPb = []byte{{default_appkey_links_pb | go_bytes}}
 
-func init() {{
+func init() {
 	err := proto.Unmarshal(DefaultLinksPb, &DefaultLinks)
-	if err != nil {{
+	if err != nil {
 		panic(err.Error())
-	}}
-}}
+	}
+}
