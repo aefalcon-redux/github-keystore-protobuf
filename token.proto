@@ -3,6 +3,19 @@ package token;
 option go_package = "tokenpb";
 import "google/protobuf/timestamp.proto";
 
+message S3Ref {
+    string bucket = 1;
+    string key = 2;
+    string region = 3;
+}
+
+message Location {
+    oneof location {
+        S3Ref s3 = 1;
+        string url = 2;
+    }
+}
+
 message Links {
     string app_tokens = 1;
     string install_tokens = 2;
