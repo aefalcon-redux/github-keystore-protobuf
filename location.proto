@@ -1,0 +1,16 @@
+syntax = "proto3";
+package mobettersoftware.protobuf.location;
+option go_package = "github.com/aefalcon/github-keystore-protobuf/go/locationpb";
+
+message Location {
+    oneof location {
+        S3Ref s3 = 1;
+        string url = 2;
+    }
+}
+
+message S3Ref {
+    string bucket = 1;
+    string key = 2;
+    string region = 3;
+}

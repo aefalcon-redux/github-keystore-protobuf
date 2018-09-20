@@ -13,77 +13,37 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
+import location_pb2 as location__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='appkey.proto',
-  package='appkey',
+  package='mobettersoftware.protobuf.appkey',
   syntax='proto3',
-  serialized_options=_b('Z\010appkeypb'),
-  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12\x06\x61ppkey\x1a\x1cgoogle/protobuf/struct.proto\"B\n\x08Location\x12\x1b\n\x02s3\x18\x01 \x01(\x0b\x32\r.appkey.S3RefH\x00\x12\r\n\x03url\x18\x02 \x01(\tH\x00\x42\n\n\x08location\"}\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12#\n\x04keys\x18\x02 \x03(\x0b\x32\x15.appkey.App.KeysEntry\x1a\x45\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\'\n\x05value\x18\x02 \x01(\x0b\x32\x18.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\x82\x01\n\x08\x41ppIndex\x12/\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x1d.appkey.AppIndex.AppRefsEntry\x1a\x45\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.appkey.AppIndexEntry:\x02\x38\x01\"4\n\x05S3Ref\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"7\n\x06\x41ppKey\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"4\n\x10\x41ppKeyIndexEntry\x12 \n\x04meta\x18\x01 \x01(\x0b\x32\x12.appkey.AppKeyMeta\"7\n\x13\x41ppKeyManagerConfig\x12 \n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32\x10.appkey.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\":\n\rAddAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64\x41ppResponse\"\x1f\n\x10RemoveAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x13\n\x11RemoveAppResponse\"\x1c\n\rGetAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x11\n\x0fListAppsRequest\":\n\rAddKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x1c\n\x04keys\x18\x02 \x03(\x0b\x32\x0e.appkey.AppKey\"\x10\n\x0e\x41\x64\x64KeyResponse\"5\n\x10RemoveKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x14\n\x0c\x66ingerprints\x18\x02 \x03(\t\"\x13\n\x11RemoveKeyResponse\"Y\n\x0eSignJwtRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\'\n\x06\x63laims\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x11\n\talgorithm\x18\x03 \x01(\t\"\x1e\n\x0fSignJwtResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t2\xed\x02\n\x11KeyManagerService\x12\x37\n\x06\x41\x64\x64\x41pp\x12\x15.appkey.AddAppRequest\x1a\x16.appkey.AddAppResponse\x12@\n\tRemoveApp\x12\x18.appkey.RemoveAppRequest\x1a\x19.appkey.RemoveAppResponse\x12,\n\x06GetApp\x12\x15.appkey.GetAppRequest\x1a\x0b.appkey.App\x12\x34\n\x07ListAps\x12\x17.appkey.ListAppsRequest\x1a\x10.appkey.AppIndex\x12\x37\n\x06\x41\x64\x64Key\x12\x15.appkey.AddKeyRequest\x1a\x16.appkey.AddKeyResponse\x12@\n\tRemoveKey\x12\x18.appkey.RemoveKeyRequest\x1a\x19.appkey.RemoveKeyResponse2L\n\x0eSigningService\x12:\n\x07SignJwt\x12\x16.appkey.SignJwtRequest\x1a\x17.appkey.SignJwtResponseB\nZ\x08\x61ppkeypbb\x06proto3')
+  serialized_options=_b('Z8github.com/aefalcon/github-keystore-protobuf/go/appkeypb'),
+  serialized_pb=_b('\n\x0c\x61ppkey.proto\x12 mobettersoftware.protobuf.appkey\x1a\x1cgoogle/protobuf/struct.proto\x1a\x0elocation.proto\"\xb1\x01\n\x03\x41pp\x12\n\n\x02id\x18\x01 \x01(\x04\x12=\n\x04keys\x18\x02 \x03(\x0b\x32/.mobettersoftware.protobuf.appkey.App.KeysEntry\x1a_\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x41\n\x05value\x18\x02 \x01(\x0b\x32\x32.mobettersoftware.protobuf.appkey.AppKeyIndexEntry:\x02\x38\x01\"\x1b\n\rAppIndexEntry\x12\n\n\x02id\x18\x01 \x01(\x04\"\xb6\x01\n\x08\x41ppIndex\x12I\n\x08\x61pp_refs\x18\x01 \x03(\x0b\x32\x37.mobettersoftware.protobuf.appkey.AppIndex.AppRefsEntry\x1a_\n\x0c\x41ppRefsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12>\n\x05value\x18\x02 \x01(\x0b\x32/.mobettersoftware.protobuf.appkey.AppIndexEntry:\x02\x38\x01\"h\n\nAppKeyMeta\x12\x13\n\x0b\x66ingerprint\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\x04\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12\x12\n\nnot_before\x18\x04 \x01(\t\x12\x12\n\nnoat_after\x18\x05 \x01(\t\"Q\n\x06\x41ppKey\x12:\n\x04meta\x18\x01 \x01(\x0b\x32,.mobettersoftware.protobuf.appkey.AppKeyMeta\x12\x0b\n\x03key\x18\x02 \x01(\x0c\"N\n\x10\x41ppKeyIndexEntry\x12:\n\x04meta\x18\x01 \x01(\x0b\x32,.mobettersoftware.protobuf.appkey.AppKeyMeta\"S\n\x13\x41ppKeyManagerConfig\x12<\n\x06\x64\x62_loc\x18\x01 \x01(\x0b\x32,.mobettersoftware.protobuf.location.Location\"F\n\x05Links\x12\x11\n\tapp_index\x18\x01 \x01(\t\x12\x0b\n\x03\x61pp\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x10\n\x08key_meta\x18\x04 \x01(\t\"T\n\rAddAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x36\n\x04keys\x18\x02 \x03(\x0b\x32(.mobettersoftware.protobuf.appkey.AppKey\"\x10\n\x0e\x41\x64\x64\x41ppResponse\"\x1f\n\x10RemoveAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x13\n\x11RemoveAppResponse\"\x1c\n\rGetAppRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x11\n\x0fListAppsRequest\"T\n\rAddKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x36\n\x04keys\x18\x02 \x03(\x0b\x32(.mobettersoftware.protobuf.appkey.AppKey\"\x10\n\x0e\x41\x64\x64KeyResponse\"5\n\x10RemoveKeyRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x14\n\x0c\x66ingerprints\x18\x02 \x03(\t\"\x13\n\x11RemoveKeyResponse\"Y\n\x0eSignJwtRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\'\n\x06\x63laims\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x11\n\talgorithm\x18\x03 \x01(\t\"\x1e\n\x0fSignJwtResponse\x12\x0b\n\x03jwt\x18\x01 \x01(\t2\xa5\x05\n\x11KeyManagerService\x12k\n\x06\x41\x64\x64\x41pp\x12/.mobettersoftware.protobuf.appkey.AddAppRequest\x1a\x30.mobettersoftware.protobuf.appkey.AddAppResponse\x12t\n\tRemoveApp\x12\x32.mobettersoftware.protobuf.appkey.RemoveAppRequest\x1a\x33.mobettersoftware.protobuf.appkey.RemoveAppResponse\x12`\n\x06GetApp\x12/.mobettersoftware.protobuf.appkey.GetAppRequest\x1a%.mobettersoftware.protobuf.appkey.App\x12h\n\x07ListAps\x12\x31.mobettersoftware.protobuf.appkey.ListAppsRequest\x1a*.mobettersoftware.protobuf.appkey.AppIndex\x12k\n\x06\x41\x64\x64Key\x12/.mobettersoftware.protobuf.appkey.AddKeyRequest\x1a\x30.mobettersoftware.protobuf.appkey.AddKeyResponse\x12t\n\tRemoveKey\x12\x32.mobettersoftware.protobuf.appkey.RemoveKeyRequest\x1a\x33.mobettersoftware.protobuf.appkey.RemoveKeyResponse2\x80\x01\n\x0eSigningService\x12n\n\x07SignJwt\x12\x30.mobettersoftware.protobuf.appkey.SignJwtRequest\x1a\x31.mobettersoftware.protobuf.appkey.SignJwtResponseB:Z8github.com/aefalcon/github-keystore-protobuf/go/appkeypbb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,location__pb2.DESCRIPTOR,])
 
 
-
-
-_LOCATION = _descriptor.Descriptor(
-  name='Location',
-  full_name='appkey.Location',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='s3', full_name='appkey.Location.s3', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='url', full_name='appkey.Location.url', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='location', full_name='appkey.Location.location',
-      index=0, containing_type=None, fields=[]),
-  ],
-  serialized_start=54,
-  serialized_end=120,
-)
 
 
 _APP_KEYSENTRY = _descriptor.Descriptor(
   name='KeysEntry',
-  full_name='appkey.App.KeysEntry',
+  full_name='mobettersoftware.protobuf.appkey.App.KeysEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='appkey.App.KeysEntry.key', index=0,
+      name='key', full_name='mobettersoftware.protobuf.appkey.App.KeysEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='appkey.App.KeysEntry.value', index=1,
+      name='value', full_name='mobettersoftware.protobuf.appkey.App.KeysEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -101,26 +61,26 @@ _APP_KEYSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=178,
-  serialized_end=247,
+  serialized_start=179,
+  serialized_end=274,
 )
 
 _APP = _descriptor.Descriptor(
   name='App',
-  full_name='appkey.App',
+  full_name='mobettersoftware.protobuf.appkey.App',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='appkey.App.id', index=0,
+      name='id', full_name='mobettersoftware.protobuf.appkey.App.id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='keys', full_name='appkey.App.keys', index=1,
+      name='keys', full_name='mobettersoftware.protobuf.appkey.App.keys', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -138,20 +98,20 @@ _APP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=122,
-  serialized_end=247,
+  serialized_start=97,
+  serialized_end=274,
 )
 
 
 _APPINDEXENTRY = _descriptor.Descriptor(
   name='AppIndexEntry',
-  full_name='appkey.AppIndexEntry',
+  full_name='mobettersoftware.protobuf.appkey.AppIndexEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='appkey.AppIndexEntry.id', index=0,
+      name='id', full_name='mobettersoftware.protobuf.appkey.AppIndexEntry.id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -169,27 +129,27 @@ _APPINDEXENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=249,
-  serialized_end=276,
+  serialized_start=276,
+  serialized_end=303,
 )
 
 
 _APPINDEX_APPREFSENTRY = _descriptor.Descriptor(
   name='AppRefsEntry',
-  full_name='appkey.AppIndex.AppRefsEntry',
+  full_name='mobettersoftware.protobuf.appkey.AppIndex.AppRefsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='appkey.AppIndex.AppRefsEntry.key', index=0,
+      name='key', full_name='mobettersoftware.protobuf.appkey.AppIndex.AppRefsEntry.key', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='appkey.AppIndex.AppRefsEntry.value', index=1,
+      name='value', full_name='mobettersoftware.protobuf.appkey.AppIndex.AppRefsEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -207,19 +167,19 @@ _APPINDEX_APPREFSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=340,
-  serialized_end=409,
+  serialized_start=393,
+  serialized_end=488,
 )
 
 _APPINDEX = _descriptor.Descriptor(
   name='AppIndex',
-  full_name='appkey.AppIndex',
+  full_name='mobettersoftware.protobuf.appkey.AppIndex',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app_refs', full_name='appkey.AppIndex.app_refs', index=0,
+      name='app_refs', full_name='mobettersoftware.protobuf.appkey.AppIndex.app_refs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -237,93 +197,48 @@ _APPINDEX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=279,
-  serialized_end=409,
-)
-
-
-_S3REF = _descriptor.Descriptor(
-  name='S3Ref',
-  full_name='appkey.S3Ref',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bucket', full_name='appkey.S3Ref.bucket', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='key', full_name='appkey.S3Ref.key', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='region', full_name='appkey.S3Ref.region', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=411,
-  serialized_end=463,
+  serialized_start=306,
+  serialized_end=488,
 )
 
 
 _APPKEYMETA = _descriptor.Descriptor(
   name='AppKeyMeta',
-  full_name='appkey.AppKeyMeta',
+  full_name='mobettersoftware.protobuf.appkey.AppKeyMeta',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='fingerprint', full_name='appkey.AppKeyMeta.fingerprint', index=0,
+      name='fingerprint', full_name='mobettersoftware.protobuf.appkey.AppKeyMeta.fingerprint', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.AppKeyMeta.app', index=1,
+      name='app', full_name='mobettersoftware.protobuf.appkey.AppKeyMeta.app', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='disabled', full_name='appkey.AppKeyMeta.disabled', index=2,
+      name='disabled', full_name='mobettersoftware.protobuf.appkey.AppKeyMeta.disabled', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='not_before', full_name='appkey.AppKeyMeta.not_before', index=3,
+      name='not_before', full_name='mobettersoftware.protobuf.appkey.AppKeyMeta.not_before', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='noat_after', full_name='appkey.AppKeyMeta.noat_after', index=4,
+      name='noat_after', full_name='mobettersoftware.protobuf.appkey.AppKeyMeta.noat_after', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -341,27 +256,27 @@ _APPKEYMETA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=569,
+  serialized_start=490,
+  serialized_end=594,
 )
 
 
 _APPKEY = _descriptor.Descriptor(
   name='AppKey',
-  full_name='appkey.AppKey',
+  full_name='mobettersoftware.protobuf.appkey.AppKey',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='meta', full_name='appkey.AppKey.meta', index=0,
+      name='meta', full_name='mobettersoftware.protobuf.appkey.AppKey.meta', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='key', full_name='appkey.AppKey.key', index=1,
+      name='key', full_name='mobettersoftware.protobuf.appkey.AppKey.key', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -379,20 +294,20 @@ _APPKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=626,
+  serialized_start=596,
+  serialized_end=677,
 )
 
 
 _APPKEYINDEXENTRY = _descriptor.Descriptor(
   name='AppKeyIndexEntry',
-  full_name='appkey.AppKeyIndexEntry',
+  full_name='mobettersoftware.protobuf.appkey.AppKeyIndexEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='meta', full_name='appkey.AppKeyIndexEntry.meta', index=0,
+      name='meta', full_name='mobettersoftware.protobuf.appkey.AppKeyIndexEntry.meta', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -410,20 +325,20 @@ _APPKEYINDEXENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=628,
-  serialized_end=680,
+  serialized_start=679,
+  serialized_end=757,
 )
 
 
 _APPKEYMANAGERCONFIG = _descriptor.Descriptor(
   name='AppKeyManagerConfig',
-  full_name='appkey.AppKeyManagerConfig',
+  full_name='mobettersoftware.protobuf.appkey.AppKeyManagerConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='db_loc', full_name='appkey.AppKeyManagerConfig.db_loc', index=0,
+      name='db_loc', full_name='mobettersoftware.protobuf.appkey.AppKeyManagerConfig.db_loc', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -441,41 +356,41 @@ _APPKEYMANAGERCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=737,
+  serialized_start=759,
+  serialized_end=842,
 )
 
 
 _LINKS = _descriptor.Descriptor(
   name='Links',
-  full_name='appkey.Links',
+  full_name='mobettersoftware.protobuf.appkey.Links',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app_index', full_name='appkey.Links.app_index', index=0,
+      name='app_index', full_name='mobettersoftware.protobuf.appkey.Links.app_index', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.Links.app', index=1,
+      name='app', full_name='mobettersoftware.protobuf.appkey.Links.app', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='key', full_name='appkey.Links.key', index=2,
+      name='key', full_name='mobettersoftware.protobuf.appkey.Links.key', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='key_meta', full_name='appkey.Links.key_meta', index=3,
+      name='key_meta', full_name='mobettersoftware.protobuf.appkey.Links.key_meta', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -493,27 +408,27 @@ _LINKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=739,
-  serialized_end=809,
+  serialized_start=844,
+  serialized_end=914,
 )
 
 
 _ADDAPPREQUEST = _descriptor.Descriptor(
   name='AddAppRequest',
-  full_name='appkey.AddAppRequest',
+  full_name='mobettersoftware.protobuf.appkey.AddAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.AddAppRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.AddAppRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='keys', full_name='appkey.AddAppRequest.keys', index=1,
+      name='keys', full_name='mobettersoftware.protobuf.appkey.AddAppRequest.keys', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -531,14 +446,14 @@ _ADDAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=811,
-  serialized_end=869,
+  serialized_start=916,
+  serialized_end=1000,
 )
 
 
 _ADDAPPRESPONSE = _descriptor.Descriptor(
   name='AddAppResponse',
-  full_name='appkey.AddAppResponse',
+  full_name='mobettersoftware.protobuf.appkey.AddAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -555,20 +470,20 @@ _ADDAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=871,
-  serialized_end=887,
+  serialized_start=1002,
+  serialized_end=1018,
 )
 
 
 _REMOVEAPPREQUEST = _descriptor.Descriptor(
   name='RemoveAppRequest',
-  full_name='appkey.RemoveAppRequest',
+  full_name='mobettersoftware.protobuf.appkey.RemoveAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.RemoveAppRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.RemoveAppRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -586,14 +501,14 @@ _REMOVEAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=920,
+  serialized_start=1020,
+  serialized_end=1051,
 )
 
 
 _REMOVEAPPRESPONSE = _descriptor.Descriptor(
   name='RemoveAppResponse',
-  full_name='appkey.RemoveAppResponse',
+  full_name='mobettersoftware.protobuf.appkey.RemoveAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -610,20 +525,20 @@ _REMOVEAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=922,
-  serialized_end=941,
+  serialized_start=1053,
+  serialized_end=1072,
 )
 
 
 _GETAPPREQUEST = _descriptor.Descriptor(
   name='GetAppRequest',
-  full_name='appkey.GetAppRequest',
+  full_name='mobettersoftware.protobuf.appkey.GetAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.GetAppRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.GetAppRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -641,14 +556,14 @@ _GETAPPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=943,
-  serialized_end=971,
+  serialized_start=1074,
+  serialized_end=1102,
 )
 
 
 _LISTAPPSREQUEST = _descriptor.Descriptor(
   name='ListAppsRequest',
-  full_name='appkey.ListAppsRequest',
+  full_name='mobettersoftware.protobuf.appkey.ListAppsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -665,27 +580,27 @@ _LISTAPPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=973,
-  serialized_end=990,
+  serialized_start=1104,
+  serialized_end=1121,
 )
 
 
 _ADDKEYREQUEST = _descriptor.Descriptor(
   name='AddKeyRequest',
-  full_name='appkey.AddKeyRequest',
+  full_name='mobettersoftware.protobuf.appkey.AddKeyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.AddKeyRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.AddKeyRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='keys', full_name='appkey.AddKeyRequest.keys', index=1,
+      name='keys', full_name='mobettersoftware.protobuf.appkey.AddKeyRequest.keys', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -703,14 +618,14 @@ _ADDKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=992,
-  serialized_end=1050,
+  serialized_start=1123,
+  serialized_end=1207,
 )
 
 
 _ADDKEYRESPONSE = _descriptor.Descriptor(
   name='AddKeyResponse',
-  full_name='appkey.AddKeyResponse',
+  full_name='mobettersoftware.protobuf.appkey.AddKeyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -727,27 +642,27 @@ _ADDKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1052,
-  serialized_end=1068,
+  serialized_start=1209,
+  serialized_end=1225,
 )
 
 
 _REMOVEKEYREQUEST = _descriptor.Descriptor(
   name='RemoveKeyRequest',
-  full_name='appkey.RemoveKeyRequest',
+  full_name='mobettersoftware.protobuf.appkey.RemoveKeyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.RemoveKeyRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.RemoveKeyRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fingerprints', full_name='appkey.RemoveKeyRequest.fingerprints', index=1,
+      name='fingerprints', full_name='mobettersoftware.protobuf.appkey.RemoveKeyRequest.fingerprints', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -765,14 +680,14 @@ _REMOVEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1070,
-  serialized_end=1123,
+  serialized_start=1227,
+  serialized_end=1280,
 )
 
 
 _REMOVEKEYRESPONSE = _descriptor.Descriptor(
   name='RemoveKeyResponse',
-  full_name='appkey.RemoveKeyResponse',
+  full_name='mobettersoftware.protobuf.appkey.RemoveKeyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -789,34 +704,34 @@ _REMOVEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1125,
-  serialized_end=1144,
+  serialized_start=1282,
+  serialized_end=1301,
 )
 
 
 _SIGNJWTREQUEST = _descriptor.Descriptor(
   name='SignJwtRequest',
-  full_name='appkey.SignJwtRequest',
+  full_name='mobettersoftware.protobuf.appkey.SignJwtRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='app', full_name='appkey.SignJwtRequest.app', index=0,
+      name='app', full_name='mobettersoftware.protobuf.appkey.SignJwtRequest.app', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='claims', full_name='appkey.SignJwtRequest.claims', index=1,
+      name='claims', full_name='mobettersoftware.protobuf.appkey.SignJwtRequest.claims', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='algorithm', full_name='appkey.SignJwtRequest.algorithm', index=2,
+      name='algorithm', full_name='mobettersoftware.protobuf.appkey.SignJwtRequest.algorithm', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -834,20 +749,20 @@ _SIGNJWTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1146,
-  serialized_end=1235,
+  serialized_start=1303,
+  serialized_end=1392,
 )
 
 
 _SIGNJWTRESPONSE = _descriptor.Descriptor(
   name='SignJwtResponse',
-  full_name='appkey.SignJwtResponse',
+  full_name='mobettersoftware.protobuf.appkey.SignJwtResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='jwt', full_name='appkey.SignJwtResponse.jwt', index=0,
+      name='jwt', full_name='mobettersoftware.protobuf.appkey.SignJwtResponse.jwt', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -865,17 +780,10 @@ _SIGNJWTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1237,
-  serialized_end=1267,
+  serialized_start=1394,
+  serialized_end=1424,
 )
 
-_LOCATION.fields_by_name['s3'].message_type = _S3REF
-_LOCATION.oneofs_by_name['location'].fields.append(
-  _LOCATION.fields_by_name['s3'])
-_LOCATION.fields_by_name['s3'].containing_oneof = _LOCATION.oneofs_by_name['location']
-_LOCATION.oneofs_by_name['location'].fields.append(
-  _LOCATION.fields_by_name['url'])
-_LOCATION.fields_by_name['url'].containing_oneof = _LOCATION.oneofs_by_name['location']
 _APP_KEYSENTRY.fields_by_name['value'].message_type = _APPKEYINDEXENTRY
 _APP_KEYSENTRY.containing_type = _APP
 _APP.fields_by_name['keys'].message_type = _APP_KEYSENTRY
@@ -884,15 +792,13 @@ _APPINDEX_APPREFSENTRY.containing_type = _APPINDEX
 _APPINDEX.fields_by_name['app_refs'].message_type = _APPINDEX_APPREFSENTRY
 _APPKEY.fields_by_name['meta'].message_type = _APPKEYMETA
 _APPKEYINDEXENTRY.fields_by_name['meta'].message_type = _APPKEYMETA
-_APPKEYMANAGERCONFIG.fields_by_name['db_loc'].message_type = _LOCATION
+_APPKEYMANAGERCONFIG.fields_by_name['db_loc'].message_type = location__pb2._LOCATION
 _ADDAPPREQUEST.fields_by_name['keys'].message_type = _APPKEY
 _ADDKEYREQUEST.fields_by_name['keys'].message_type = _APPKEY
 _SIGNJWTREQUEST.fields_by_name['claims'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
-DESCRIPTOR.message_types_by_name['Location'] = _LOCATION
 DESCRIPTOR.message_types_by_name['App'] = _APP
 DESCRIPTOR.message_types_by_name['AppIndexEntry'] = _APPINDEXENTRY
 DESCRIPTOR.message_types_by_name['AppIndex'] = _APPINDEX
-DESCRIPTOR.message_types_by_name['S3Ref'] = _S3REF
 DESCRIPTOR.message_types_by_name['AppKeyMeta'] = _APPKEYMETA
 DESCRIPTOR.message_types_by_name['AppKey'] = _APPKEY
 DESCRIPTOR.message_types_by_name['AppKeyIndexEntry'] = _APPKEYINDEXENTRY
@@ -912,24 +818,17 @@ DESCRIPTOR.message_types_by_name['SignJwtRequest'] = _SIGNJWTREQUEST
 DESCRIPTOR.message_types_by_name['SignJwtResponse'] = _SIGNJWTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Location = _reflection.GeneratedProtocolMessageType('Location', (_message.Message,), dict(
-  DESCRIPTOR = _LOCATION,
-  __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.Location)
-  ))
-_sym_db.RegisterMessage(Location)
-
 App = _reflection.GeneratedProtocolMessageType('App', (_message.Message,), dict(
 
   KeysEntry = _reflection.GeneratedProtocolMessageType('KeysEntry', (_message.Message,), dict(
     DESCRIPTOR = _APP_KEYSENTRY,
     __module__ = 'appkey_pb2'
-    # @@protoc_insertion_point(class_scope:appkey.App.KeysEntry)
+    # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.App.KeysEntry)
     ))
   ,
   DESCRIPTOR = _APP,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.App)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.App)
   ))
 _sym_db.RegisterMessage(App)
 _sym_db.RegisterMessage(App.KeysEntry)
@@ -937,7 +836,7 @@ _sym_db.RegisterMessage(App.KeysEntry)
 AppIndexEntry = _reflection.GeneratedProtocolMessageType('AppIndexEntry', (_message.Message,), dict(
   DESCRIPTOR = _APPINDEXENTRY,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppIndexEntry)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppIndexEntry)
   ))
 _sym_db.RegisterMessage(AppIndexEntry)
 
@@ -946,139 +845,132 @@ AppIndex = _reflection.GeneratedProtocolMessageType('AppIndex', (_message.Messag
   AppRefsEntry = _reflection.GeneratedProtocolMessageType('AppRefsEntry', (_message.Message,), dict(
     DESCRIPTOR = _APPINDEX_APPREFSENTRY,
     __module__ = 'appkey_pb2'
-    # @@protoc_insertion_point(class_scope:appkey.AppIndex.AppRefsEntry)
+    # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppIndex.AppRefsEntry)
     ))
   ,
   DESCRIPTOR = _APPINDEX,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppIndex)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppIndex)
   ))
 _sym_db.RegisterMessage(AppIndex)
 _sym_db.RegisterMessage(AppIndex.AppRefsEntry)
 
-S3Ref = _reflection.GeneratedProtocolMessageType('S3Ref', (_message.Message,), dict(
-  DESCRIPTOR = _S3REF,
-  __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.S3Ref)
-  ))
-_sym_db.RegisterMessage(S3Ref)
-
 AppKeyMeta = _reflection.GeneratedProtocolMessageType('AppKeyMeta', (_message.Message,), dict(
   DESCRIPTOR = _APPKEYMETA,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKeyMeta)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppKeyMeta)
   ))
 _sym_db.RegisterMessage(AppKeyMeta)
 
 AppKey = _reflection.GeneratedProtocolMessageType('AppKey', (_message.Message,), dict(
   DESCRIPTOR = _APPKEY,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKey)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppKey)
   ))
 _sym_db.RegisterMessage(AppKey)
 
 AppKeyIndexEntry = _reflection.GeneratedProtocolMessageType('AppKeyIndexEntry', (_message.Message,), dict(
   DESCRIPTOR = _APPKEYINDEXENTRY,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKeyIndexEntry)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppKeyIndexEntry)
   ))
 _sym_db.RegisterMessage(AppKeyIndexEntry)
 
 AppKeyManagerConfig = _reflection.GeneratedProtocolMessageType('AppKeyManagerConfig', (_message.Message,), dict(
   DESCRIPTOR = _APPKEYMANAGERCONFIG,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AppKeyManagerConfig)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AppKeyManagerConfig)
   ))
 _sym_db.RegisterMessage(AppKeyManagerConfig)
 
 Links = _reflection.GeneratedProtocolMessageType('Links', (_message.Message,), dict(
   DESCRIPTOR = _LINKS,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.Links)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.Links)
   ))
 _sym_db.RegisterMessage(Links)
 
 AddAppRequest = _reflection.GeneratedProtocolMessageType('AddAppRequest', (_message.Message,), dict(
   DESCRIPTOR = _ADDAPPREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AddAppRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AddAppRequest)
   ))
 _sym_db.RegisterMessage(AddAppRequest)
 
 AddAppResponse = _reflection.GeneratedProtocolMessageType('AddAppResponse', (_message.Message,), dict(
   DESCRIPTOR = _ADDAPPRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AddAppResponse)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AddAppResponse)
   ))
 _sym_db.RegisterMessage(AddAppResponse)
 
 RemoveAppRequest = _reflection.GeneratedProtocolMessageType('RemoveAppRequest', (_message.Message,), dict(
   DESCRIPTOR = _REMOVEAPPREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.RemoveAppRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.RemoveAppRequest)
   ))
 _sym_db.RegisterMessage(RemoveAppRequest)
 
 RemoveAppResponse = _reflection.GeneratedProtocolMessageType('RemoveAppResponse', (_message.Message,), dict(
   DESCRIPTOR = _REMOVEAPPRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.RemoveAppResponse)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.RemoveAppResponse)
   ))
 _sym_db.RegisterMessage(RemoveAppResponse)
 
 GetAppRequest = _reflection.GeneratedProtocolMessageType('GetAppRequest', (_message.Message,), dict(
   DESCRIPTOR = _GETAPPREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.GetAppRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.GetAppRequest)
   ))
 _sym_db.RegisterMessage(GetAppRequest)
 
 ListAppsRequest = _reflection.GeneratedProtocolMessageType('ListAppsRequest', (_message.Message,), dict(
   DESCRIPTOR = _LISTAPPSREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.ListAppsRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.ListAppsRequest)
   ))
 _sym_db.RegisterMessage(ListAppsRequest)
 
 AddKeyRequest = _reflection.GeneratedProtocolMessageType('AddKeyRequest', (_message.Message,), dict(
   DESCRIPTOR = _ADDKEYREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AddKeyRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AddKeyRequest)
   ))
 _sym_db.RegisterMessage(AddKeyRequest)
 
 AddKeyResponse = _reflection.GeneratedProtocolMessageType('AddKeyResponse', (_message.Message,), dict(
   DESCRIPTOR = _ADDKEYRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.AddKeyResponse)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.AddKeyResponse)
   ))
 _sym_db.RegisterMessage(AddKeyResponse)
 
 RemoveKeyRequest = _reflection.GeneratedProtocolMessageType('RemoveKeyRequest', (_message.Message,), dict(
   DESCRIPTOR = _REMOVEKEYREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.RemoveKeyRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.RemoveKeyRequest)
   ))
 _sym_db.RegisterMessage(RemoveKeyRequest)
 
 RemoveKeyResponse = _reflection.GeneratedProtocolMessageType('RemoveKeyResponse', (_message.Message,), dict(
   DESCRIPTOR = _REMOVEKEYRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.RemoveKeyResponse)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.RemoveKeyResponse)
   ))
 _sym_db.RegisterMessage(RemoveKeyResponse)
 
 SignJwtRequest = _reflection.GeneratedProtocolMessageType('SignJwtRequest', (_message.Message,), dict(
   DESCRIPTOR = _SIGNJWTREQUEST,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.SignJwtRequest)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.SignJwtRequest)
   ))
 _sym_db.RegisterMessage(SignJwtRequest)
 
 SignJwtResponse = _reflection.GeneratedProtocolMessageType('SignJwtResponse', (_message.Message,), dict(
   DESCRIPTOR = _SIGNJWTRESPONSE,
   __module__ = 'appkey_pb2'
-  # @@protoc_insertion_point(class_scope:appkey.SignJwtResponse)
+  # @@protoc_insertion_point(class_scope:mobettersoftware.protobuf.appkey.SignJwtResponse)
   ))
 _sym_db.RegisterMessage(SignJwtResponse)
 
@@ -1089,16 +981,16 @@ _APPINDEX_APPREFSENTRY._options = None
 
 _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   name='KeyManagerService',
-  full_name='appkey.KeyManagerService',
+  full_name='mobettersoftware.protobuf.appkey.KeyManagerService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1270,
-  serialized_end=1635,
+  serialized_start=1427,
+  serialized_end=2104,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddApp',
-    full_name='appkey.KeyManagerService.AddApp',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.AddApp',
     index=0,
     containing_service=None,
     input_type=_ADDAPPREQUEST,
@@ -1107,7 +999,7 @@ _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RemoveApp',
-    full_name='appkey.KeyManagerService.RemoveApp',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.RemoveApp',
     index=1,
     containing_service=None,
     input_type=_REMOVEAPPREQUEST,
@@ -1116,7 +1008,7 @@ _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetApp',
-    full_name='appkey.KeyManagerService.GetApp',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.GetApp',
     index=2,
     containing_service=None,
     input_type=_GETAPPREQUEST,
@@ -1125,7 +1017,7 @@ _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListAps',
-    full_name='appkey.KeyManagerService.ListAps',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.ListAps',
     index=3,
     containing_service=None,
     input_type=_LISTAPPSREQUEST,
@@ -1134,7 +1026,7 @@ _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='AddKey',
-    full_name='appkey.KeyManagerService.AddKey',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.AddKey',
     index=4,
     containing_service=None,
     input_type=_ADDKEYREQUEST,
@@ -1143,7 +1035,7 @@ _KEYMANAGERSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='RemoveKey',
-    full_name='appkey.KeyManagerService.RemoveKey',
+    full_name='mobettersoftware.protobuf.appkey.KeyManagerService.RemoveKey',
     index=5,
     containing_service=None,
     input_type=_REMOVEKEYREQUEST,
@@ -1158,16 +1050,16 @@ DESCRIPTOR.services_by_name['KeyManagerService'] = _KEYMANAGERSERVICE
 
 _SIGNINGSERVICE = _descriptor.ServiceDescriptor(
   name='SigningService',
-  full_name='appkey.SigningService',
+  full_name='mobettersoftware.protobuf.appkey.SigningService',
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1637,
-  serialized_end=1713,
+  serialized_start=2107,
+  serialized_end=2235,
   methods=[
   _descriptor.MethodDescriptor(
     name='SignJwt',
-    full_name='appkey.SigningService.SignJwt',
+    full_name='mobettersoftware.protobuf.appkey.SigningService.SignJwt',
     index=0,
     containing_service=None,
     input_type=_SIGNJWTREQUEST,

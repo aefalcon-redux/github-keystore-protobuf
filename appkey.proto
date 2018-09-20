@@ -1,18 +1,12 @@
 syntax = "proto3";
-package appkey;
-option go_package = "appkeypb";
+package mobettersoftware.protobuf.appkey;
+option go_package = "github.com/aefalcon/github-keystore-protobuf/go/appkeypb";
 import "google/protobuf/struct.proto";
+import "location.proto";
 
 //*************************
 //* Data storage messages *
 //*************************
-
-message Location {
-    oneof location {
-        S3Ref s3 = 1;
-        string url = 2;
-    }
-}
 
 message App {
     uint64 id = 1;
@@ -25,12 +19,6 @@ message AppIndexEntry {
 
 message AppIndex {
     map<uint64,AppIndexEntry> app_refs = 1;
-}
-
-message S3Ref {
-    string bucket = 1;
-    string key = 2;
-    string region = 3;
 }
 
 message AppKeyMeta {
@@ -56,7 +44,7 @@ message AppKeyIndexEntry {
 
 
 message AppKeyManagerConfig {
-    Location db_loc = 1;
+    mobettersoftware.protobuf.location.Location db_loc = 1;
 }
 
 message Links {
