@@ -108,21 +108,6 @@ message RemoveKeyRequest {
 message RemoveKeyResponse {
 }
 
-message SignRequest {
-    uint64 app = 1;
-    bytes protected_data = 2;
-    string algorithm = 3;
-    oneof key_selector {
-        string fingerprint = 4;
-    }
-}
-
-message SignedData {
-    bytes signature = 1;
-    string algorithm = 2;
-    string signing_fingerprint = 3;
-}
-
 message SignJwtRequest {
     uint64 app = 1;
     google.protobuf.Struct claims = 2;
