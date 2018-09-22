@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='token',
   syntax='proto3',
   serialized_options=_b('Z7github.com/aefalcon/github-keystore-protobuf/go/tokenpb'),
-  serialized_pb=_b('\n\x0btoken.proto\x12\x05token\x1a\x1fgoogle/protobuf/timestamp.proto\"3\n\x05Links\x12\x12\n\napp_tokens\x18\x01 \x01(\t\x12\x16\n\x0einstall_tokens\x18\x02 \x01(\t\"V\n\x08\x41ppToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\r\n\x05token\x18\x02 \x01(\x0c\x12.\n\nexpiration\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"k\n\x0cInstallToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\x12\r\n\x05token\x18\x03 \x01(\x0c\x12.\n\nexpiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x12GetAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"5\n\x13GetAppTokenResponse\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"6\n\x16GetInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"=\n\x17GetInstallTokenResponse\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"4\n\x12PutAppTokenRequest\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"\x15\n\x13PutAppTokenResponse\"<\n\x16PutInstallTokenRequest\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"\x19\n\x17PutInstallTokenResponse\"$\n\x15\x44\x65leteAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x18\n\x16\x44\x65leteAppTokenResponse\"9\n\x19\x44\x65leteInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"\x1c\n\x1a\x44\x65leteInstallTokenResponse2\xe6\x03\n\nTokenStore\x12\x44\n\x0bGetAppToken\x12\x19.token.GetAppTokenRequest\x1a\x1a.token.GetAppTokenResponse\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponse\x12\x44\n\x0bPutAppToken\x12\x19.token.PutAppTokenRequest\x1a\x1a.token.PutAppTokenResponse\x12P\n\x0fPutInstallToken\x12\x1d.token.PutInstallTokenRequest\x1a\x1e.token.PutInstallTokenResponse\x12M\n\x0e\x44\x65leteAppToken\x12\x1c.token.DeleteAppTokenRequest\x1a\x1d.token.DeleteAppTokenResponse\x12Y\n\x12\x44\x65leteInstallToken\x12 .token.DeleteInstallTokenRequest\x1a!.token.DeleteInstallTokenResponse2g\n\x13InstallTokenService\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponseB9Z7github.com/aefalcon/github-keystore-protobuf/go/tokenpbb\x06proto3')
+  serialized_pb=_b('\n\x0btoken.proto\x12\x05token\x1a\x1fgoogle/protobuf/timestamp.proto\"3\n\x05Links\x12\x12\n\napp_tokens\x18\x01 \x01(\t\x12\x16\n\x0einstall_tokens\x18\x02 \x01(\t\"V\n\x08\x41ppToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\r\n\x05token\x18\x02 \x01(\t\x12.\n\nexpiration\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"k\n\x0cInstallToken\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\x12\r\n\x05token\x18\x03 \x01(\t\x12.\n\nexpiration\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x12GetAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"5\n\x13GetAppTokenResponse\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"6\n\x16GetInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"=\n\x17GetInstallTokenResponse\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"4\n\x12PutAppTokenRequest\x12\x1e\n\x05token\x18\x01 \x01(\x0b\x32\x0f.token.AppToken\"\x15\n\x13PutAppTokenResponse\"<\n\x16PutInstallTokenRequest\x12\"\n\x05token\x18\x01 \x01(\x0b\x32\x13.token.InstallToken\"\x19\n\x17PutInstallTokenResponse\"$\n\x15\x44\x65leteAppTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\"\x18\n\x16\x44\x65leteAppTokenResponse\"9\n\x19\x44\x65leteInstallTokenRequest\x12\x0b\n\x03\x61pp\x18\x01 \x01(\x04\x12\x0f\n\x07install\x18\x02 \x01(\x04\"\x1c\n\x1a\x44\x65leteInstallTokenResponse2\xe6\x03\n\nTokenStore\x12\x44\n\x0bGetAppToken\x12\x19.token.GetAppTokenRequest\x1a\x1a.token.GetAppTokenResponse\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponse\x12\x44\n\x0bPutAppToken\x12\x19.token.PutAppTokenRequest\x1a\x1a.token.PutAppTokenResponse\x12P\n\x0fPutInstallToken\x12\x1d.token.PutInstallTokenRequest\x1a\x1e.token.PutInstallTokenResponse\x12M\n\x0e\x44\x65leteAppToken\x12\x1c.token.DeleteAppTokenRequest\x1a\x1d.token.DeleteAppTokenResponse\x12Y\n\x12\x44\x65leteInstallToken\x12 .token.DeleteInstallTokenRequest\x1a!.token.DeleteInstallTokenResponse2g\n\x13InstallTokenService\x12P\n\x0fGetInstallToken\x12\x1d.token.GetInstallTokenRequest\x1a\x1e.token.GetInstallTokenResponseB9Z7github.com/aefalcon/github-keystore-protobuf/go/tokenpbb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -81,8 +81,8 @@ _APPTOKEN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='token', full_name='token.AppToken.token', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -133,8 +133,8 @@ _INSTALLTOKEN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='token', full_name='token.InstallToken.token', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
